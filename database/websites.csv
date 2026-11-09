@@ -1,0 +1,22 @@
+
+id,name,url,category,purpose,main_features,testing_focus
+1,Google,https://www.google.com,Search Engine,Searching information,Search; Images; Maps; Suggestions,Search functionality
+2,YouTube,https://www.youtube.com,Streaming,Watching and sharing videos,Video; Search; Comments; Subscriptions,Video playback
+3,Amazon,https://www.amazon.com,E-commerce,Online shopping,Products; Cart; Orders; Reviews,Shopping process
+4,Wikipedia,https://www.wikipedia.org,Education,Online encyclopedia,Articles; Search; Categories,Content navigation
+5,Facebook,https://www.facebook.com,Social Media,Social communication,Posts; Groups; Messages; Comments,Social interactions
+6,Instagram,https://www.instagram.com,Social Media,Sharing photos and videos,Posts; Stories; Reels; Messages,Content publishing
+7,Reddit,https://www.reddit.com,Forum,Online discussions,Communities; Posts; Comments; Voting,Posts and comments
+8,GitHub,https://github.com,Developer Platform,Code hosting and collaboration,Repositories; Issues; Pull Requests,Repository management
+9,Netflix,https://www.netflix.com,Streaming,Watching movies and series,Video; Profiles; Search; Recommendations,Video playback
+10,Spotify,https://www.spotify.com,Streaming,Music and podcast streaming,Music; Podcasts; Playlists; Search,Audio playback
+11,LinkedIn,https://www.linkedin.com,Professional Network,Professional networking,Profiles; Jobs; Messages; Posts,Profile management
+12,Microsoft,https://www.microsoft.com,Technology,Software and technology products,Products; Search; Support; Downloads,Product navigation
+13,Apple,https://www.apple.com,Technology and E-commerce,Technology products and online shopping,Product Pages; Store; Support,Shopping functionality
+14,Booking.com,https://www.booking.com,Booking,Hotel and accommodation reservations,Search; Filters; Booking; Reviews,Reservation process
+15,Airbnb,https://www.airbnb.com,Booking,Accommodation marketplace,Search; Filters; Listings; Booking,Reservation functionality
+16,eBay,https://www.ebay.com,Marketplace,Buying and selling products,Products; Auctions; Cart; Search,Marketplace functionality
+17,Pinterest,https://www.pinterest.com,Social Media,Discovering and saving ideas,Pins; Boards; Search; Recommendations,Content management
+18,TikTok,https://www.tiktok.com,Social Media,Short video sharing,Videos; Feed; Search; Comments,Video interactions
+19,Stack Overflow,https://stackoverflow.com,Education and Forum,Programming questions and answers,Questions; Answers; Tags; Voting,Question management
+20,Mozilla,https://www.mozilla.org,Technology,Internet products and information,Firefox; Downloads; Support; Articles,Navigation and downloads
