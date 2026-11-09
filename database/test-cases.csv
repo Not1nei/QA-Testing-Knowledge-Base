@@ -1,0 +1,17 @@
+
+test_id,category,test_name,precondition,test_steps,expected_result,priority
+TC001,General,Open homepage,Website is available,Open website,Homepage loads correctly,High
+TC002,Navigation,Check main menu,Homepage is open,Click each menu item,Correct pages are displayed,Medium
+TC003,Authentication,User login,User has an account,Enter valid credentials and login,User is logged in,High
+TC004,Authentication,Invalid login,Login page is open,Enter invalid credentials,Error message is displayed,High
+TC005,Forms,Submit contact form,Contact form is available,Fill required fields and submit,Form is submitted successfully,Medium
+TC006,Search,Search for information,Search field is available,Enter a search query,Relevant results are displayed,High
+TC007,E-commerce,Add product to cart,Product page is open,Click add to cart,Product appears in cart,High
+TC008,E-commerce,Remove product from cart,Cart contains a product,Click remove product,Product is removed,Medium
+TC009,Booking,Search available offers,Booking page is open,Enter location and dates,Matching offers are displayed,High
+TC010,Streaming,Play media,Media is available,Click play button,Media starts playing,High
+TC011,Social Media,Create a post,User is logged in,Write and publish a post,Post is published,Medium
+TC012,Responsive,Check mobile layout,Website is available,Open mobile viewport,Layout adapts to screen,High
+TC013,Accessibility,Keyboard navigation,Website is open,Use Tab and Enter keys,Interactive elements are accessible,Medium
+TC014,Performance,Measure page loading,Website is available,Run Lighthouse audit,Performance metrics are generated,Medium
+TC015,Navigation,Check broken links,Website is open,Open available navigation links,Links lead to valid destinations,Medium
