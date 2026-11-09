@@ -1,0 +1,14 @@
+
+id,test_type,description,purpose,example_tool
+1,Functional Testing,Checks website functionality,Verify that features work correctly,Chrome DevTools
+2,UI Testing,Checks visual interface,Verify layout and interface elements,Chrome DevTools
+3,UX Testing,Evaluates user experience,Check usability and navigation,User Testing
+4,Responsive Testing,Checks different screen sizes,Verify mobile and desktop layouts,Chrome DevTools
+5,Performance Testing,Measures website performance,Identify speed and loading problems,Google Lighthouse
+6,Accessibility Testing,Checks website accessibility,Verify accessibility for different users,WAVE
+7,Security Testing,Evaluates security controls,Identify security weaknesses,OWASP ZAP
+8,Regression Testing,Checks existing functionality after changes,Prevent previously fixed bugs from returning,Manual Testing
+9,Compatibility Testing,Checks different browsers and devices,Verify consistent website behavior,Cross Browser Testing
+10,Usability Testing,Checks ease of use,Identify difficulties for users,User Testing
+11,Integration Testing,Checks interactions between components,Verify that connected components work together,Postman
+12,Smoke Testing,Checks basic critical functionality,Verify that the application is ready for further testing,Manual Testing
