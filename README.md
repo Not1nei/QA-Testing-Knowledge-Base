@@ -24,6 +24,7 @@ flowchart TD
   C --> S
   T --> S
   S --> O[Raport HTML]
+  O --> A[Audyt sklepu DICEREE]
 ```
 
 ### Wytyczne UX
@@ -59,6 +60,7 @@ flowchart TD
 | Poznać wytyczne jednego tematu | wybierz aspekt w tabeli powyżej |
 | Sprawdzić stronę | [checklista UX](ux/checklista/checklista-ux.md) ([CSV](ux/checklista/checklista-ux.csv)), przy błędzie kliknij ID, aby zobaczyć źródło i poprawkę |
 | Zrobić pełny audyt z personą | [procedura](ux/metodologia/procedura.md), [persona](ux/szablony/persona.md), [ścieżka](ux/szablony/sciezka.md), [raport](ux/szablony/raport.md) |
+| Zobaczyć przykładowy audyt | [audyt UX sklepu DICEREE](reports/ux-diceree/README.md): persona, 18 kroków, zrzuty, 27 problemów |
 | Ustalić wagę błędu | [wagi 0–4](ux/metodologia/wagi.md) |
 | Sprawdzić prawo lub WCAG | [prawo](ux/metodologia/prawo.md), [pokrycie WCAG 2.2](ux/zrodla/wcag-22.md) |
 | Zweryfikować źródło | [rejestr źródeł](ux/zrodla/zrodla.md) |
@@ -105,6 +107,7 @@ knowledge-base/      podstawy testowania
 checklists/          checklisty typów serwisów
 templates/           szablony QA
 database/ research/  dane i analiza 20 stron
+reports/ux-diceree/  raport z audytu UX z personą
 reports/ sources/    raport projektu, źródła części QA
 ```
 
