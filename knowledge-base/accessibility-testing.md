@@ -52,3 +52,7 @@ Dostępna strona internetowa:
 ## 5. Podsumowanie
 
 Accessibility Testing pomaga tworzyć strony internetowe, z których może korzystać jak największa liczba osób.
+
+## 6. Dokładne wytyczne
+
+Progi, kryteria WCAG 2.2 i sposób sprawdzenia: [kolor i kontrast](../ux/wytyczne/05-kolor-kontrast.md), [klawiatura i fokus](../ux/wytyczne/08-klawiatura-fokus.md), [semantyka](../ux/wytyczne/09-semantyka-czytniki.md), [multimedia](../ux/wytyczne/10-multimedia-ruch.md), [dostępność poznawcza](../ux/wytyczne/11-poznawcza-neuroroznorodnosc.md).

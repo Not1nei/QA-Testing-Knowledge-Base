@@ -91,7 +91,11 @@ Przykładowe kategorie:
 
 Baza służy do analizy funkcjonalności różnych typów stron i wyboru odpowiednich metod testowania.
 
-## 10. Conclusion
+## 10. UX Audit
+
+Do oceny UX i dostępności użyj [checklisty UX](ux/checklista/checklista-ux.md), [procedury](ux/metodologia/procedura.md) albo [skilla ux-audit](.claude/skills/ux-audit/SKILL.md).
+
+## 11. Conclusion
 
 QA Testing Knowledge Base to praktyczny zbiór wiedzy, checklist, przykładów test cases i szablonów dokumentacji.
 

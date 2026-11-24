@@ -49,3 +49,7 @@ Pozwala ocenić szybkość działania, stabilność oraz zachowanie strony podcz
 ## 6. Podsumowanie
 
 Performance Testing pomaga ocenić szybkość i stabilność strony internetowej oraz wykrywać problemy, które mogą utrudniać korzystanie z serwisu.
+
+## Dokładne wytyczne
+
+Progi Core Web Vitals i sposób pomiaru: [wydajność](../ux/wytyczne/13-wydajnosc.md).

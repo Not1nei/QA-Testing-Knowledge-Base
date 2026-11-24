@@ -95,3 +95,7 @@ Wykorzystanie w projekcie:
 Powyższe źródła stanowią podstawę teoretyczną i metodologiczną projektu QA Testing Knowledge Base.
 
 Zostały wykorzystane do opracowania informacji o testowaniu oprogramowania, tworzenia checklist oraz przygotowania przykładowych przypadków testowych.
+
+## 9. Źródła bazy UX
+
+Źródła wytycznych UX z przypisaniem do punktów: [rejestr źródeł](../ux/zrodla/zrodla.md).

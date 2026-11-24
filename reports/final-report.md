@@ -49,7 +49,7 @@ Gotowe listy kontrolne do testowania:
 - Serwisów społecznościowych.
 - Platform streamingowych.
 - Platform rezerwacyjnych.
-- Dostępności stron.
+- Dostępności i UX stron ([checklista UX](../ux/checklista/checklista-ux.md)).
 
 ### Templates
 Szablony dokumentacji QA:
@@ -86,6 +86,7 @@ QA-Testing-Knowledge-Base/
 ├── knowledge-base/
 ├── checklists/
 ├── templates/
+├── ux/
 ├── database/
 ├── sources/
 └── reports/

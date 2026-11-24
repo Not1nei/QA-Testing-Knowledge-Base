@@ -58,3 +58,7 @@ Nieprawidłowa responsywność może powodować:
 ## 6. Podsumowanie
 
 Responsive Testing pozwala sprawdzić, czy strona internetowa jest dostosowana do różnych urządzeń i zapewnia wygodę użytkowania niezależnie od wielkości ekranu.
+
+## Dokładne wytyczne
+
+Progi i sposób sprawdzenia: [mobile i dotyk](../ux/wytyczne/12-mobile-dotyk.md), [układ](../ux/wytyczne/03-uklad-hierarchia.md).

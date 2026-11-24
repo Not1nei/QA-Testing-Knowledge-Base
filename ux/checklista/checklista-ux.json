@@ -1,0 +1,3654 @@
+{
+ "verified": "2026-11-24",
+ "repo": "https://github.com/Not1nei/QA-Testing-Knowledge-Base",
+ "severity": {
+  "0": "brak problemu",
+  "1": "kosmetyczny",
+  "2": "drobny",
+  "3": "poważny",
+  "4": "krytyczny"
+ },
+ "aspects": [
+  {
+   "id": "HEU",
+   "name": "Heurystyki użyteczności",
+   "slug": "01-heurystyki"
+  },
+  {
+   "id": "NAV",
+   "name": "Nawigacja i architektura informacji",
+   "slug": "02-nawigacja"
+  },
+  {
+   "id": "WIZ",
+   "name": "Układ i hierarchia wizualna",
+   "slug": "03-uklad-hierarchia"
+  },
+  {
+   "id": "TYP",
+   "name": "Typografia i czytelność",
+   "slug": "04-typografia"
+  },
+  {
+   "id": "KOL",
+   "name": "Kolor i kontrast",
+   "slug": "05-kolor-kontrast"
+  },
+  {
+   "id": "TRE",
+   "name": "Treść i język",
+   "slug": "06-tresc-jezyk"
+  },
+  {
+   "id": "FOR",
+   "name": "Formularze i błędy",
+   "slug": "07-formularze-bledy"
+  },
+  {
+   "id": "KLA",
+   "name": "Klawiatura i fokus",
+   "slug": "08-klawiatura-fokus"
+  },
+  {
+   "id": "SEM",
+   "name": "Semantyka i czytniki ekranu",
+   "slug": "09-semantyka-czytniki"
+  },
+  {
+   "id": "MED",
+   "name": "Multimedia i ruch",
+   "slug": "10-multimedia-ruch"
+  },
+  {
+   "id": "KOG",
+   "name": "Dostępność poznawcza i neuroróżnorodność",
+   "slug": "11-poznawcza-neuroroznorodnosc"
+  },
+  {
+   "id": "MOB",
+   "name": "Urządzenia mobilne i dotyk",
+   "slug": "12-mobile-dotyk"
+  },
+  {
+   "id": "WYD",
+   "name": "Wydajność",
+   "slug": "13-wydajnosc"
+  },
+  {
+   "id": "ETY",
+   "name": "Etyka, prywatność i zaufanie",
+   "slug": "14-etyka-prywatnosc-zaufanie"
+  },
+  {
+   "id": "TRA",
+   "name": "Wyszukiwanie, produkt i transakcje",
+   "slug": "15-transakcje-wyszukiwanie"
+  }
+ ],
+ "items": [
+  {
+   "id": "HEU-01",
+   "aspect": "HEU",
+   "title": "System pokazuje, co się dzieje, po każdej akcji użytkownika",
+   "requirement": "Reakcja w 0,1 s odbierana jest jako natychmiastowa, do 1 s nie przerywa toku myśli, po 10 s użytkownik traci uwagę. Każda akcja ma widoczny efekt: zmianę stanu, komunikat lub wskaźnik postępu.",
+   "how": "Kliknij każdy główny przycisk na ścieżce. Zmierz czas do pierwszej widocznej zmiany.",
+   "fix": "Dodaj stan ładowania, potwierdzenie i stan po akcji (np. „Dodano do koszyka”).",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Limity czasu reakcji",
+     "url": "https://www.nngroup.com/articles/response-times-3-important-limits/"
+    },
+    {
+     "label": "Nielsen Norman Group, Heurystyka 1: widoczność stanu systemu",
+     "url": "https://www.nngroup.com/articles/visibility-system-status/"
+    },
+    {
+     "label": "W3C COGA, 4.5.10 Provide Feedback",
+     "url": "https://www.w3.org/TR/coga-usable/#provide-feedback-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-01"
+  },
+  {
+   "id": "HEU-02",
+   "aspect": "HEU",
+   "title": "Język i pojęcia pochodzą ze świata użytkownika",
+   "requirement": "Etykiety, kategorie i komunikaty używają słów odbiorcy, a nie nazw wewnętrznych, skrótów ani kodów systemu.",
+   "how": "Wypisz etykiety menu, przycisków i błędów. Zaznacz te, których persona nie zna.",
+   "fix": "Zastąp żargon słowami odbiorcy albo dodaj krótkie wyjaśnienie w miejscu użycia.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Heurystyka 2: zgodność ze światem rzeczywistym",
+     "url": "https://www.nngroup.com/articles/match-system-real-world/"
+    },
+    {
+     "label": "W3C COGA, 4.4.1 Use Clear Words",
+     "url": "https://www.w3.org/TR/coga-usable/#use-clear-words-pattern"
+    },
+    {
+     "label": "GOV.UK, GOV.UK: wytyczne pisania",
+     "url": "https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/writing-guidelines/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-02"
+  },
+  {
+   "id": "HEU-03",
+   "aspect": "HEU",
+   "title": "Użytkownik może się wycofać z każdej akcji",
+   "requirement": "Każde okno, krok i filtr można zamknąć, cofnąć albo wyczyścić. Przycisk „Wstecz” przeglądarki wraca do poprzedniego stanu bez utraty danych.",
+   "how": "Na każdym kroku użyj „Wstecz”, Esc i „Anuluj”. Zanotuj utratę danych lub pułapkę.",
+   "fix": "Dodaj „Anuluj”, „Cofnij” i obsługę historii przeglądarki, zachowuj wpisane dane.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Heurystyka 3: kontrola i wolność użytkownika",
+     "url": "https://www.nngroup.com/articles/user-control-and-freedom/"
+    },
+    {
+     "label": "W3C COGA, 4.5.2 Let Users Go Back",
+     "url": "https://www.w3.org/TR/coga-usable/#let-users-go-back-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-03"
+  },
+  {
+   "id": "HEU-04",
+   "aspect": "HEU",
+   "title": "Te same elementy wyglądają, nazywają się i działają tak samo",
+   "requirement": "Element o tej samej funkcji ma na wszystkich ekranach tę samą nazwę, ikonę i wygląd. Strona trzyma się konwencji znanych z innych serwisów.",
+   "how": "Porównaj zrzuty ekranów: przyciski główne, nazwy, ikony, kolejność menu.",
+   "fix": "Opisz komponenty w jednym miejscu i usuń warianty.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.2.4 Consistent Identification (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/consistent-identification.html"
+    },
+    {
+     "label": "Nielsen Norman Group, Heurystyka 4: spójność i standardy",
+     "url": "https://www.nngroup.com/articles/consistency-and-standards/"
+    },
+    {
+     "label": "Laws of UX, Prawo Jakoba",
+     "url": "https://lawsofux.com/jakobs-law/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-04"
+  },
+  {
+   "id": "HEU-05",
+   "aspect": "HEU",
+   "title": "Interfejs zapobiega błędom, zanim powstaną",
+   "requirement": "Pola ograniczają nieprawidłowe wartości, formaty są opisane przed wpisaniem, akcje ryzykowne mają ostrzeżenie.",
+   "how": "Spróbuj wpisać błędną datę, ilość 0, zły format. Sprawdź, kiedy dowiadujesz się o problemie.",
+   "fix": "Dodaj ograniczenia, podpowiedzi i rozsądne wartości domyślne.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Heurystyka 5: zapobieganie błędom (pomyłki)",
+     "url": "https://www.nngroup.com/articles/slips/"
+    },
+    {
+     "label": "W3C COGA, 4.5.4 Design Forms to Prevent Mistakes",
+     "url": "https://www.w3.org/TR/coga-usable/#design-forms-to-prevent-mistakes-pattern"
+    },
+    {
+     "label": "WCAG 2.2, 3.3.4 Error Prevention (Legal, Financial, Data) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-05"
+  },
+  {
+   "id": "HEU-06",
+   "aspect": "HEU",
+   "title": "Użytkownik rozpoznaje, a nie przypomina sobie",
+   "requirement": "Informacje potrzebne w danym kroku są na ekranie. Nie trzeba pamiętać danych z poprzedniego ekranu.",
+   "how": "Na każdym ekranie wypisz, co persona musi pamiętać z wcześniejszych.",
+   "fix": "Pokaż podsumowanie, ostatnio oglądane pozycje i wybrane opcje.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Heurystyka 6: rozpoznawanie zamiast przypominania",
+     "url": "https://www.nngroup.com/articles/recognition-and-recall/"
+    },
+    {
+     "label": "W3C COGA, 4.7.5 Do Not Rely on Users Calculations or Memorizing Information",
+     "url": "https://www.w3.org/TR/coga-usable/#do-not-rely-on-users-calculations-or-memorizing-information-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-06"
+  },
+  {
+   "id": "HEU-07",
+   "aspect": "HEU",
+   "title": "Częste zadania mają skrót",
+   "requirement": "Powtarzalne działania można wykonać szybciej: wyszukiwarka, zapamiętane dane, ponowienie, skrót do koszyka.",
+   "how": "Policz kroki głównego zadania przy drugiej wizycie.",
+   "fix": "Dodaj skróty do najczęstszych zadań i skróć ścieżkę krytyczną.",
+   "strength": "BADANIE",
+   "severity": 1,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Heurystyka 7: elastyczność i efektywność",
+     "url": "https://www.nngroup.com/articles/flexibility-efficiency-heuristic/"
+    },
+    {
+     "label": "W3C COGA, 4.6.2 Make Short Critical Paths",
+     "url": "https://www.w3.org/TR/coga-usable/#make-short-critical-paths-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-07"
+  },
+  {
+   "id": "HEU-08",
+   "aspect": "HEU",
+   "title": "Ekran nie zawiera treści, które nie wspierają celu",
+   "requirement": "Każdy element na ekranie wspiera zadanie główne albo drugorzędne. Brak ozdobników konkurujących z treścią.",
+   "how": "Dla każdego bloku odpowiedz, w którym zadaniu pomaga. Bez odpowiedzi oznacza błąd.",
+   "fix": "Usuń blok, przenieś go niżej albo schowaj pod rozwinięciem.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Heurystyka 8: estetyka i minimalizm",
+     "url": "https://www.nngroup.com/articles/aesthetic-minimalist-design/"
+    },
+    {
+     "label": "W3C COGA, 4.6.3 Avoid Too Much Content",
+     "url": "https://www.w3.org/TR/coga-usable/#avoid-too-much-content-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-08"
+  },
+  {
+   "id": "HEU-09",
+   "aspect": "HEU",
+   "title": "Komunikat błędu mówi, co się stało i co zrobić",
+   "requirement": "Komunikat jest przy miejscu błędu, zwykłym językiem, wskazuje przyczynę i następny krok, nie obwinia.",
+   "how": "Wywołaj 3 różne błędy i oceń: co, gdzie, dlaczego, jak naprawić.",
+   "fix": "Przepisz komunikaty wg schematu: problem + rozwiązanie.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.3.3 Error Suggestion (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html"
+    },
+    {
+     "label": "Nielsen Norman Group, Wytyczne komunikatów o błędach",
+     "url": "https://www.nngroup.com/articles/error-message-guidelines/"
+    },
+    {
+     "label": "GOV.UK, GOV.UK Design System: komunikat o błędzie",
+     "url": "https://design-system.service.gov.uk/components/error-message/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-09"
+  },
+  {
+   "id": "HEU-10",
+   "aspect": "HEU",
+   "title": "Pomoc jest łatwa do znalezienia i w stałym miejscu",
+   "requirement": "Kontakt, pomoc lub czat są w tej samej kolejności na każdej stronie, na której występują.",
+   "how": "Na każdym ekranie wskaż kontakt. Porównaj położenie w kodzie i na ekranie.",
+   "fix": "Umieść pomoc w stałym miejscu nagłówka lub stopki.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.2.6 Consistent Help (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/consistent-help.html"
+    },
+    {
+     "label": "Nielsen Norman Group, Heurystyka 10: pomoc i dokumentacja",
+     "url": "https://www.nngroup.com/articles/help-and-documentation/"
+    },
+    {
+     "label": "W3C COGA, 4.8.5 Make It Easy to Find Help and Give Feedback",
+     "url": "https://www.w3.org/TR/coga-usable/#make-it-easy-to-find-help-and-give-feedback-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/01-heurystyki.md#heu-10"
+  },
+  {
+   "id": "NAV-01",
+   "aspect": "NAV",
+   "title": "Każda strona ma unikalny, opisowy tytuł",
+   "requirement": "Element <title> jest niepusty, opisuje temat strony, zaczyna się od części unikalnej i nie powtarza się na innych stronach.",
+   "how": "Sprawdź <title> na każdym ekranie ścieżki.",
+   "fix": "Stosuj wzór „Nazwa ekranu | Nazwa serwisu”.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:document-title",
+    "x:title"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.4.2 Page Titled (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html"
+    },
+    {
+     "label": "W3C, WCAG Technique H25: element title",
+     "url": "https://www.w3.org/WAI/WCAG22/Techniques/html/H25"
+    },
+    {
+     "label": "Google, Google Search: tytuły stron",
+     "url": "https://developers.google.com/search/docs/appearance/title-link"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-01"
+  },
+  {
+   "id": "NAV-02",
+   "aspect": "NAV",
+   "title": "Menu główne jest spójne na wszystkich stronach",
+   "requirement": "Powtarzająca się nawigacja ma tę samą względną kolejność na każdej stronie.",
+   "how": "Porównaj kolejność pozycji menu na wszystkich ekranach.",
+   "fix": "Użyj jednego komponentu menu w całym serwisie.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:menu"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.2.3 Consistent Navigation (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html"
+    },
+    {
+     "label": "W3C COGA, 4.2.2 Use a Familiar Hierarchy and Design",
+     "url": "https://www.w3.org/TR/coga-usable/#use-a-familiar-hierarchy-and-design-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-02"
+  },
+  {
+   "id": "NAV-03",
+   "aspect": "NAV",
+   "title": "Aktualna strona jest oznaczona w nawigacji",
+   "requirement": "Pozycja menu odpowiadająca bieżącej stronie wyróżnia się wizualnie i ma aria-current=\"page\".",
+   "how": "Sprawdź wygląd i kod menu na każdym ekranie.",
+   "fix": "Dodaj wyróżnienie inne niż sam kolor i aria-current.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:current"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Checklista projektowania menu",
+     "url": "https://www.nngroup.com/articles/menu-design/"
+    },
+    {
+     "label": "W3C WAI, WAI Tutorials: struktura menu",
+     "url": "https://www.w3.org/WAI/tutorials/menus/structure/"
+    },
+    {
+     "label": "WCAG 2.2, 2.4.8 Location (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/location.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-03"
+  },
+  {
+   "id": "NAV-04",
+   "aspect": "NAV",
+   "title": "Na dużym ekranie główna nawigacja jest widoczna",
+   "requirement": "Na desktopie najważniejsze kategorie są widoczne bez rozwijania. Menu hamburger nie zastępuje ich na szerokim ekranie.",
+   "how": "Otwórz stronę w 1440 px i policz widoczne pozycje menu.",
+   "fix": "Pokaż 4–7 głównych pozycji, resztę zostaw w rozwinięciu.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:nav"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Menu hamburger i ukryta nawigacja",
+     "url": "https://www.nngroup.com/articles/hamburger-menus/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-04"
+  },
+  {
+   "id": "NAV-05",
+   "aspect": "NAV",
+   "title": "Do każdej strony prowadzą co najmniej dwie drogi",
+   "requirement": "Stronę można znaleźć dwoma sposobami, np. menu i wyszukiwarką, mapą strony lub linkami. Wyjątek: krok procesu.",
+   "how": "Dla 3 podstron wskaż dwie niezależne drogi dojścia.",
+   "fix": "Dodaj wyszukiwarkę, mapę strony albo linki powiązane.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.4.5 Multiple Ways (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/multiple-ways.html"
+    },
+    {
+     "label": "W3C COGA, 4.3.6 Provide Search",
+     "url": "https://www.w3.org/TR/coga-usable/#provide-search-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-05"
+  },
+  {
+   "id": "NAV-06",
+   "aspect": "NAV",
+   "title": "Głębokie strony mają okruszki",
+   "requirement": "W serwisie o strukturze hierarchicznej strona niższego poziomu pokazuje ścieżkę okruszków, a ostatni element nie jest linkiem.",
+   "how": "Wejdź bezpośrednio na podstronę. Sprawdź, czy wiadomo, gdzie jesteś.",
+   "fix": "Dodaj okruszki z aria-label i linkami do wyższych poziomów.",
+   "strength": "BADANIE",
+   "severity": 1,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Okruszki",
+     "url": "https://www.nngroup.com/articles/breadcrumbs/"
+    },
+    {
+     "label": "WCAG 2.2, 2.4.8 Location (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/location.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-06"
+  },
+  {
+   "id": "NAV-07",
+   "aspect": "NAV",
+   "title": "Tekst linku mówi, dokąd prowadzi",
+   "requirement": "Cel linku wynika z jego tekstu lub kontekstu. Nie używa się „kliknij tutaj”, „więcej”, „czytaj dalej” bez dopowiedzenia.",
+   "how": "Wypisz wszystkie linki i przeczytaj je bez kontekstu.",
+   "fix": "Zmień tekst na nazwę celu, np. „Cennik dostawy”.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:link-name",
+    "x:genericlinks"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.4.4 Link Purpose (In Context) (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html"
+    },
+    {
+     "label": "Nielsen Norman Group, Pisanie linków",
+     "url": "https://www.nngroup.com/articles/writing-links/"
+    },
+    {
+     "label": "Nielsen Norman Group, Information scent",
+     "url": "https://www.nngroup.com/articles/information-scent/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-07"
+  },
+  {
+   "id": "NAV-08",
+   "aspect": "NAV",
+   "title": "Nie ma martwych linków i przycisków",
+   "requirement": "Każdy link prowadzi do istniejącej treści, a każdy przycisk wykonuje akcję. Brak href=\"#\" i linków z kodem 4xx/5xx.",
+   "how": "Kliknij wszystkie elementy na ścieżce, sprawdź kody odpowiedzi.",
+   "fix": "Podłącz działanie, usuń element albo oznacz, że będzie później.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "x:deadlinks",
+    "x:brokenlinks"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, 4 czynniki wiarygodności",
+     "url": "https://www.nngroup.com/articles/trustworthy-design/"
+    },
+    {
+     "label": "Nielsen Norman Group, Heurystyka 1: widoczność stanu systemu",
+     "url": "https://www.nngroup.com/articles/visibility-system-status/"
+    },
+    {
+     "label": "MDN, MDN: kod 404",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-08"
+  },
+  {
+   "id": "NAV-09",
+   "aspect": "NAV",
+   "title": "Nowa karta jest zapowiedziana",
+   "requirement": "Linki otwierają się w tej samej karcie. Wyjątki (np. plik) są oznaczone w tekście lub ikoną z tekstem alternatywnym.",
+   "how": "Znajdź target=\"_blank\" i sprawdź, czy link to zapowiada.",
+   "fix": "Usuń target albo dodaj „(otwiera się w nowej karcie)”.",
+   "strength": "BADANIE",
+   "severity": 1,
+   "method": "A",
+   "auto": [
+    "x:newtab"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Linki w nowych oknach i kartach",
+     "url": "https://www.nngroup.com/articles/new-browser-windows-and-tabs/"
+    },
+    {
+     "label": "WCAG 2.2, 3.2.5 Change on Request (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/change-on-request.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-09"
+  },
+  {
+   "id": "NAV-10",
+   "aspect": "NAV",
+   "title": "Strona 404 pomaga wrócić do zadania",
+   "requirement": "Nieistniejący adres zwraca kod 404 i stronę bez żargonu, która mówi, co zrobić, z linkiem do strony głównej lub wyszukiwarki.",
+   "how": "Otwórz nieistniejący adres. Sprawdź kod HTTP i treść.",
+   "fix": "Przygotuj stronę 404 wg wzoru GOV.UK.",
+   "strength": "WYTYCZNA",
+   "severity": 1,
+   "method": "A",
+   "auto": [
+    "x:404"
+   ],
+   "sources": [
+    {
+     "label": "GOV.UK, GOV.UK Design System: strona nie znaleziona",
+     "url": "https://design-system.service.gov.uk/patterns/page-not-found-pages/"
+    },
+    {
+     "label": "MDN, MDN: kod 404",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/02-nawigacja.md#nav-10"
+  },
+  {
+   "id": "WIZ-01",
+   "aspect": "WIZ",
+   "title": "Cel strony jest zrozumiały w pierwszym widoku",
+   "requirement": "Bez przewijania widać, kto jest właścicielem serwisu, co oferuje i jaka jest główna akcja.",
+   "how": "Pokaż personie pierwszy ekran na 5 sekund i zapytaj, co to za strona.",
+   "fix": "Dodaj nagłówek z propozycją wartości i jedną główną akcję.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Przewijanie i uwaga",
+     "url": "https://www.nngroup.com/articles/scrolling-and-attention/"
+    },
+    {
+     "label": "Nielsen Norman Group, Zasady projektowania strony głównej",
+     "url": "https://www.nngroup.com/articles/homepage-design-principles/"
+    },
+    {
+     "label": "W3C COGA, 4.2.1 Make the Purpose of Your Page Clear",
+     "url": "https://www.w3.org/TR/coga-usable/#make-the-purpose-of-your-page-clear-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/03-uklad-hierarchia.md#wiz-01"
+  },
+  {
+   "id": "WIZ-02",
+   "aspect": "WIZ",
+   "title": "Na ekranie jest jedna główna akcja",
+   "requirement": "Jeden przycisk ma najsilniejszy styl. Akcje drugorzędne wyglądają słabiej.",
+   "how": "Policz na każdym ekranie przyciski w stylu głównym.",
+   "fix": "Zostaw jeden, resztę zamień na styl drugorzędny lub link.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Hierarchia wizualna",
+     "url": "https://www.nngroup.com/articles/visual-hierarchy-ux-definition/"
+    },
+    {
+     "label": "Laws of UX, Prawo Hicka",
+     "url": "https://lawsofux.com/hicks-law/"
+    },
+    {
+     "label": "GOV.UK, GOV.UK Design System: przycisk",
+     "url": "https://design-system.service.gov.uk/components/button/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/03-uklad-hierarchia.md#wiz-02"
+  },
+  {
+   "id": "WIZ-03",
+   "aspect": "WIZ",
+   "title": "Rozmiar, kontrast i położenie odpowiadają ważności",
+   "requirement": "Poziomy ważności są rozróżnialne przez skalę, kontrast i grupowanie, a nie tylko kolor.",
+   "how": "Rozmyj zrzut ekranu. Sprawdź, czy dalej widać kolejność elementów.",
+   "fix": "Ustal 2–3 rozmiary nagłówków i stosuj je konsekwentnie.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Hierarchia wizualna",
+     "url": "https://www.nngroup.com/articles/visual-hierarchy-ux-definition/"
+    },
+    {
+     "label": "Nielsen Norman Group, 5 zasad projektowania wizualnego",
+     "url": "https://www.nngroup.com/articles/principles-visual-design/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/03-uklad-hierarchia.md#wiz-03"
+  },
+  {
+   "id": "WIZ-04",
+   "aspect": "WIZ",
+   "title": "Elementy powiązane są blisko siebie",
+   "requirement": "Odstęp wewnątrz grupy jest wyraźnie mniejszy niż odstęp między grupami, np. etykieta bliżej swojego pola niż poprzedniego.",
+   "how": "Zmierz odstępy etykieta–pole i pole–następna etykieta.",
+   "fix": "Zwiększ odstęp między grupami, zmniejsz wewnątrz.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Zasada bliskości",
+     "url": "https://www.nngroup.com/articles/gestalt-proximity/"
+    },
+    {
+     "label": "W3C COGA, 4.4.10 Use White Spacing",
+     "url": "https://www.w3.org/TR/coga-usable/#use-white-spacing-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/03-uklad-hierarchia.md#wiz-04"
+  },
+  {
+   "id": "WIZ-05",
+   "aspect": "WIZ",
+   "title": "Elementy klikalne wyglądają na klikalne",
+   "requirement": "Link i przycisk są rozpoznawalne bez najechania kursorem, a tekst nieklikalny nie udaje linku.",
+   "how": "Na zrzucie zaznacz wszystko, co wygląda na klikalne. Porównaj z rzeczywistością.",
+   "fix": "Podkreśl linki w tekście, nadaj przyciskom tło i kształt.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "M",
+   "auto": [
+    "axe:link-in-text-block"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Rozpoznawalność elementów klikalnych",
+     "url": "https://www.nngroup.com/articles/clickable-elements/"
+    },
+    {
+     "label": "W3C COGA, 4.2.5 Clearly Identify Controls and Their Use",
+     "url": "https://www.w3.org/TR/coga-usable/#clearly-identify-controls-and-their-use-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/03-uklad-hierarchia.md#wiz-05"
+  },
+  {
+   "id": "WIZ-06",
+   "aspect": "WIZ",
+   "title": "Układ działa przy szerokości 320 px bez przewijania w poziomie",
+   "requirement": "Przy 320 px CSS (zoom 400% z 1280 px) treść nie wymaga przewijania w dwóch kierunkach. Wyjątek: tabele, mapy, wykresy.",
+   "how": "Ustaw szerokość 320 px albo zoom 400% i sprawdź pasek poziomy.",
+   "fix": "Usuń stałe szerokości, użyj elastycznej siatki i zawijania.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "x:hscroll320"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.10 Reflow (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/03-uklad-hierarchia.md#wiz-06"
+  },
+  {
+   "id": "WIZ-07",
+   "aspect": "WIZ",
+   "title": "Układ jest spójny między ekranami",
+   "requirement": "Nagłówek, menu, treść i stopka mają stałe miejsce, a kontrolki nie przesuwają się niespodziewanie.",
+   "how": "Nałóż zrzuty kolejnych ekranów i porównaj siatkę.",
+   "fix": "Użyj wspólnego szablonu strony.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C COGA, 4.2.3 Use a Consistent Visual Design",
+     "url": "https://www.w3.org/TR/coga-usable/#use-a-consistent-visual-design-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.5.1 Ensure Controls and Content Do Not Move Unexpectedly",
+     "url": "https://www.w3.org/TR/coga-usable/#ensure-controls-and-content-do-not-move-unexpectedly-pattern"
+    },
+    {
+     "label": "Nielsen Norman Group, Heurystyka 4: spójność i standardy",
+     "url": "https://www.nngroup.com/articles/consistency-and-standards/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/03-uklad-hierarchia.md#wiz-07"
+  },
+  {
+   "id": "WIZ-08",
+   "aspect": "WIZ",
+   "title": "Obrazy niosą informację",
+   "requirement": "Zdjęcia pokazują produkt, miejsce lub osobę, o których mówi treść. Zdjęcia ozdobne nie wypychają treści poza pierwszy ekran.",
+   "how": "Dla każdego zdjęcia odpowiedz: jaką informację traci strona bez niego?",
+   "fix": "Zamień zdjęcia stockowe na własne albo usuń.",
+   "strength": "BADANIE",
+   "severity": 1,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Zdjęcia jako treść",
+     "url": "https://www.nngroup.com/articles/photos-as-web-content/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/03-uklad-hierarchia.md#wiz-08"
+  },
+  {
+   "id": "TYP-01",
+   "aspect": "TYP",
+   "title": "Tekst główny ma co najmniej 16 px",
+   "requirement": "Treść ciągła ma rozmiar ≥ 16 px. GOV.UK stosuje 19 px na dużym i 16 px na małym ekranie.",
+   "how": "Zmierz font-size akapitów w narzędziach deweloperskich.",
+   "fix": "Ustaw 1rem lub więcej dla treści.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:fontsize"
+   ],
+   "sources": [
+    {
+     "label": "GOV.UK, GOV.UK Design System: skala typograficzna",
+     "url": "https://design-system.service.gov.uk/styles/type-scale/"
+    },
+    {
+     "label": "Nielsen Norman Group, Czytelność i zrozumiałość",
+     "url": "https://www.nngroup.com/articles/legibility-readability-comprehension/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/04-typografia.md#typ-01"
+  },
+  {
+   "id": "TYP-02",
+   "aspect": "TYP",
+   "title": "Tekst powiększa się do 200% bez utraty treści",
+   "requirement": "Przy zoomie 200% tekst nie nachodzi, nie jest obcięty i wszystkie funkcje działają.",
+   "how": "Ustaw zoom 200% i przejdź ścieżkę.",
+   "fix": "Używaj jednostek względnych, unikaj stałych wysokości bloków.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "M",
+   "auto": [
+    "axe:meta-viewport"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.4 Resize Text (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/04-typografia.md#typ-02"
+  },
+  {
+   "id": "TYP-03",
+   "aspect": "TYP",
+   "title": "Wiersz ma 45–90 znaków, najlepiej 50–75",
+   "requirement": "Kolumna tekstu ciągłego ma 50–75 znaków (Baymard), dopuszczalnie 45–90 (USWDS). Norma AAA: maks. 80.",
+   "how": "Policz znaki w najdłuższym wierszu akapitu na desktopie.",
+   "fix": "Ogranicz max-width akapitu do ok. 65ch.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:linelength"
+   ],
+   "sources": [
+    {
+     "label": "Baymard Institute, Długość wiersza",
+     "url": "https://baymard.com/research-articles/line-length-readability"
+    },
+    {
+     "label": "U.S. GSA, USWDS: typografia",
+     "url": "https://designsystem.digital.gov/components/typography/"
+    },
+    {
+     "label": "WCAG 2.2, 1.4.8 Visual Presentation (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/04-typografia.md#typ-03"
+  },
+  {
+   "id": "TYP-04",
+   "aspect": "TYP",
+   "title": "Interlinia tekstu ciągłego wynosi około 1,5",
+   "requirement": "line-height akapitów co najmniej 1,5, odstęp między akapitami co najmniej 1,5 raza większy od interlinii (poziom AAA).",
+   "how": "Odczytaj line-height akapitów.",
+   "fix": "Ustaw line-height: 1.5 i margines akapitu.",
+   "strength": "NORMA AAA",
+   "severity": 1,
+   "method": "A",
+   "auto": [
+    "x:lineheight"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.8 Visual Presentation (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html"
+    },
+    {
+     "label": "U.S. GSA, USWDS: typografia",
+     "url": "https://designsystem.digital.gov/components/typography/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/04-typografia.md#typ-04"
+  },
+  {
+   "id": "TYP-05",
+   "aspect": "TYP",
+   "title": "Zmiana odstępów tekstu nie psuje strony",
+   "requirement": "Po ustawieniu: interlinia 1,5, odstęp po akapicie 2, litery 0,12 i słowa 0,16 rozmiaru fontu, treść i funkcje pozostają dostępne.",
+   "how": "Zastosuj skrypt z audytu albo bookmarklet Text Spacing.",
+   "fix": "Usuń stałe wysokości i overflow: hidden w blokach z tekstem.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:textspacing"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.12 Text Spacing (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/04-typografia.md#typ-05"
+  },
+  {
+   "id": "TYP-06",
+   "aspect": "TYP",
+   "title": "Tekst jest wyrównany do lewej",
+   "requirement": "Dłuższe bloki nie są justowane ani wyśrodkowane.",
+   "how": "Sprawdź text-align akapitów dłuższych niż 2 wiersze.",
+   "fix": "Ustaw text-align: start.",
+   "strength": "NORMA AAA",
+   "severity": 1,
+   "method": "A",
+   "auto": [
+    "x:justify"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.8 Visual Presentation (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html"
+    },
+    {
+     "label": "UK Home Office, Plakaty „Dos and don’ts” projektowania dostępnego",
+     "url": "https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/04-typografia.md#typ-06"
+  },
+  {
+   "id": "TYP-07",
+   "aspect": "TYP",
+   "title": "Wyróżnienia nie używają podkreśleń, kursywy i długich WERSALIKÓW",
+   "requirement": "Podkreślenie zarezerwowane dla linków, brak kursywy i wersalików w całych zdaniach. Wyróżnienie przez pogrubienie.",
+   "how": "Przejrzyj nagłówki, przyciski i akapity.",
+   "fix": "Zamień na pogrubienie lub wielkość tekstu.",
+   "strength": "WYTYCZNA",
+   "severity": 1,
+   "method": "A",
+   "auto": [
+    "x:caps"
+   ],
+   "sources": [
+    {
+     "label": "UK Home Office, Plakaty „Dos and don’ts” projektowania dostępnego",
+     "url": "https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/04-typografia.md#typ-07"
+  },
+  {
+   "id": "TYP-08",
+   "aspect": "TYP",
+   "title": "Tekst nie jest obrazem",
+   "requirement": "Tekst jest prawdziwym tekstem. Wyjątek: logo.",
+   "how": "Spróbuj zaznaczyć tekst na banerach.",
+   "fix": "Zamień grafikę na HTML i CSS.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.5 Images of Text (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/04-typografia.md#typ-08"
+  },
+  {
+   "id": "KOL-01",
+   "aspect": "KOL",
+   "title": "Kontrast tekstu wynosi co najmniej 4,5:1",
+   "requirement": "Zwykły tekst ≥ 4,5:1, duży (≥ 24 px albo ≥ 18,66 px pogrubiony) ≥ 3:1.",
+   "how": "axe i kalkulator kontrastu, także stany hover i tekst na zdjęciach.",
+   "fix": "Przyciemnij tekst lub zmień tło, zapisz kolory jako zmienne.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:color-contrast"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.3 Contrast (Minimum) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+    },
+    {
+     "label": "WebAIM, Kontrast i kolor",
+     "url": "https://webaim.org/articles/contrast/"
+    },
+    {
+     "label": "WebAIM, The WebAIM Million 2026",
+     "url": "https://webaim.org/projects/million/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/05-kolor-kontrast.md#kol-01"
+  },
+  {
+   "id": "KOL-02",
+   "aspect": "KOL",
+   "title": "Kontrast elementów interfejsu wynosi co najmniej 3:1",
+   "requirement": "Krawędzie pól, ikony informacyjne, stany zaznaczenia i grafiki niosące treść mają ≥ 3:1 wobec sąsiedniego koloru.",
+   "how": "Zmierz krawędzie pól, ikony i przełączniki.",
+   "fix": "Wzmocnij kolor krawędzi i ikon.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.11 Non-text Contrast (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/05-kolor-kontrast.md#kol-02"
+  },
+  {
+   "id": "KOL-03",
+   "aspect": "KOL",
+   "title": "Informacja nie jest przekazana samym kolorem",
+   "requirement": "Błąd, status, pole wymagane i link są rozpoznawalne bez koloru (tekst, ikona, podkreślenie).",
+   "how": "Obejrzyj zrzut w skali szarości.",
+   "fix": "Dodaj tekst, ikonę lub podkreślenie.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "M",
+   "auto": [
+    "axe:link-in-text-block"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.1 Use of Color (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/05-kolor-kontrast.md#kol-03"
+  },
+  {
+   "id": "KOL-04",
+   "aspect": "KOL",
+   "title": "Tekst na zdjęciu ma zapewniony kontrast",
+   "requirement": "Tekst na obrazie lub gradiencie spełnia 4,5:1 w najgorszym miejscu.",
+   "how": "Zmierz kontrast w najjaśniejszym miejscu pod tekstem.",
+   "fix": "Dodaj nakładkę albo przenieś tekst poza obraz.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.3 Contrast (Minimum) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+    },
+    {
+     "label": "Nielsen Norman Group, Niski kontrast",
+     "url": "https://www.nngroup.com/articles/low-contrast/"
+    },
+    {
+     "label": "W3C COGA, 4.4.11 Ensure Foreground Content is not Obscured by Background",
+     "url": "https://www.w3.org/TR/coga-usable/#ensure-foreground-content-is-not-obscured-by-background-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/05-kolor-kontrast.md#kol-04"
+  },
+  {
+   "id": "KOL-05",
+   "aspect": "KOL",
+   "title": "Strona działa z ustawieniami kolorów użytkownika",
+   "requirement": "W trybie wysokiego kontrastu i w trybie ciemnym (jeśli istnieje) treść i kontrolki są widoczne, a kontrast dalej spełnia normę.",
+   "how": "Emuluj prefers-color-scheme: dark i forced-colors, zrób zrzuty.",
+   "fix": "Nie usuwaj obramowań, przetestuj oba motywy.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Tryb ciemny a jasny",
+     "url": "https://www.nngroup.com/articles/dark-mode/"
+    },
+    {
+     "label": "UK Home Office, Plakaty „Dos and don’ts” projektowania dostępnego",
+     "url": "https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf"
+    },
+    {
+     "label": "W3C COGA, 4.9.2 Enable APIs and Extensions",
+     "url": "https://www.w3.org/TR/coga-usable/#enable-apis-and-extensions-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/05-kolor-kontrast.md#kol-05"
+  },
+  {
+   "id": "KOL-06",
+   "aspect": "KOL",
+   "title": "Paleta jest spokojna, a kolory mają stałe znaczenie",
+   "requirement": "Kolor akcji, błędu i sukcesu oznacza zawsze to samo. Brak jaskrawych, kontrastujących plam w tle treści.",
+   "how": "Wypisz kolory i ich znaczenie na wszystkich ekranach.",
+   "fix": "Ogranicz paletę i opisz role kolorów.",
+   "strength": "WYTYCZNA",
+   "severity": 1,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "UK Home Office, Plakaty „Dos and don’ts” projektowania dostępnego",
+     "url": "https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf"
+    },
+    {
+     "label": "Nielsen Norman Group, Heurystyka 4: spójność i standardy",
+     "url": "https://www.nngroup.com/articles/consistency-and-standards/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/05-kolor-kontrast.md#kol-06"
+  },
+  {
+   "id": "TRE-01",
+   "aspect": "TRE",
+   "title": "Najważniejsza informacja jest na początku",
+   "requirement": "Strona, sekcja i akapit zaczynają się od wniosku, szczegóły są dalej.",
+   "how": "Przeczytaj tylko pierwsze zdania. Czy wiadomo, o co chodzi?",
+   "fix": "Przestaw treść wg odwróconej piramidy.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Odwrócona piramida",
+     "url": "https://www.nngroup.com/articles/inverted-pyramid/"
+    },
+    {
+     "label": "Nielsen Norman Group, F-kształtny wzorzec czytania",
+     "url": "https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/06-tresc-jezyk.md#tre-01"
+  },
+  {
+   "id": "TRE-02",
+   "aspect": "TRE",
+   "title": "Treść jest podzielona na krótkie fragmenty",
+   "requirement": "Akapity są krótkie, wyliczenia są listami, sekcje mają śródtytuły.",
+   "how": "Zaznacz akapity dłuższe niż ok. 5 wierszy.",
+   "fix": "Podziel, dodaj śródtytuły i listy.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Dzielenie treści na porcje",
+     "url": "https://www.nngroup.com/articles/chunking/"
+    },
+    {
+     "label": "Nielsen Norman Group, Jak użytkownicy czytają w sieci",
+     "url": "https://www.nngroup.com/articles/how-users-read-on-the-web/"
+    },
+    {
+     "label": "W3C COGA, 4.4.5 Keep Text Succinct",
+     "url": "https://www.w3.org/TR/coga-usable/#keep-text-succinct-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/06-tresc-jezyk.md#tre-02"
+  },
+  {
+   "id": "TRE-03",
+   "aspect": "TRE",
+   "title": "Nagłówki mówią o treści",
+   "requirement": "Nagłówek jest zrozumiały poza kontekstem, konkretny, bez zagadek i haseł reklamowych.",
+   "how": "Wypisz same nagłówki i przeczytaj jak spis treści.",
+   "fix": "Zastąp hasła informacją.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.4.6 Headings and Labels (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html"
+    },
+    {
+     "label": "Nielsen Norman Group, Pisanie nagłówków",
+     "url": "https://www.nngroup.com/articles/headings-pickup-lines/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/06-tresc-jezyk.md#tre-03"
+  },
+  {
+   "id": "TRE-04",
+   "aspect": "TRE",
+   "title": "Język jest prosty",
+   "requirement": "Krótkie zdania, strona czynna, słowa codzienne, skróty i trudne pojęcia wyjaśnione przy pierwszym użyciu.",
+   "how": "Sprawdź 3 kluczowe teksty, zaznacz stronę bierną, żargon i zdania powyżej 20 słów.",
+   "fix": "Przepisz wg zasad prostego języka.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Służba Cywilna (gov.pl), Prosty język",
+     "url": "https://www.gov.pl/web/sluzbacywilna/prosty-jezyk"
+    },
+    {
+     "label": "W3C COGA, 4.4.1 Use Clear Words",
+     "url": "https://www.w3.org/TR/coga-usable/#use-clear-words-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.4.2 Use a Simple Tense and Voice",
+     "url": "https://www.w3.org/TR/coga-usable/#use-a-simple-tense-and-voice-pattern"
+    },
+    {
+     "label": "WCAG 2.2, 3.1.5 Reading Level (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/reading-level.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/06-tresc-jezyk.md#tre-04"
+  },
+  {
+   "id": "TRE-05",
+   "aspect": "TRE",
+   "title": "Tekst jest dosłowny",
+   "requirement": "Instrukcje i komunikaty bez ironii, metafor i podwójnych przeczeń.",
+   "how": "Poszukaj metafor i podwójnych przeczeń w przyciskach i instrukcjach.",
+   "fix": "Napisz wprost, co się stanie.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C COGA, 4.4.4 Use Literal Language",
+     "url": "https://www.w3.org/TR/coga-usable/#use-literal-language-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.4.3 Avoid Double Negatives or Nested Clauses",
+     "url": "https://www.w3.org/TR/coga-usable/#avoid-double-negatives-or-nested-clauses-pattern"
+    },
+    {
+     "label": "UK Home Office, Plakaty „Dos and don’ts” projektowania dostępnego",
+     "url": "https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/06-tresc-jezyk.md#tre-05"
+  },
+  {
+   "id": "TRE-06",
+   "aspect": "TRE",
+   "title": "Przycisk nazywa swój skutek",
+   "requirement": "Etykieta opisuje akcję, np. „Zapisz adres”, a nie „OK”, „Dalej” bez kontekstu czy „Rozpocznij”.",
+   "how": "Przeczytaj etykiety przycisków bez otoczenia.",
+   "fix": "Użyj czasownika i obiektu.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [
+    "axe:button-name"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Problem z „Get started”",
+     "url": "https://www.nngroup.com/articles/get-started/"
+    },
+    {
+     "label": "UK Home Office, Plakaty „Dos and don’ts” projektowania dostępnego",
+     "url": "https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf"
+    },
+    {
+     "label": "W3C COGA, 4.2.5 Clearly Identify Controls and Their Use",
+     "url": "https://www.w3.org/TR/coga-usable/#clearly-identify-controls-and-their-use-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/06-tresc-jezyk.md#tre-06"
+  },
+  {
+   "id": "TRE-07",
+   "aspect": "TRE",
+   "title": "Język strony i fragmentów obcych jest oznaczony",
+   "requirement": "<html lang> zgodny z językiem treści, fragmenty w innym języku mają własny lang.",
+   "how": "Sprawdź atrybut lang w kodzie.",
+   "fix": "Dodaj lang=\"pl\" oraz lang do cytatów.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:html-has-lang",
+    "axe:html-lang-valid",
+    "axe:valid-lang"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.1.1 Language of Page (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/language-of-page.html"
+    },
+    {
+     "label": "WCAG 2.2, 3.1.2 Language of Parts (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html"
+    },
+    {
+     "label": "WebAIM, The WebAIM Million 2026",
+     "url": "https://webaim.org/projects/million/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/06-tresc-jezyk.md#tre-07"
+  },
+  {
+   "id": "TRE-08",
+   "aspect": "TRE",
+   "title": "Instrukcje podają jeden krok naraz",
+   "requirement": "Proces opisany jest listą numerowaną, jedna czynność na punkt, w kolejności wykonania.",
+   "how": "Sprawdź instrukcje dostawy, zwrotu i rejestracji.",
+   "fix": "Rozbij na numerowane kroki.",
+   "strength": "WYTYCZNA",
+   "severity": 1,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C COGA, 4.4.9 Separate Each Instruction",
+     "url": "https://www.w3.org/TR/coga-usable/#separate-each-instruction-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.2.4 Make Each Step Clear",
+     "url": "https://www.w3.org/TR/coga-usable/#make-each-step-clear-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.5.7 Use Clear Step-by-step Instructions",
+     "url": "https://www.w3.org/TR/coga-usable/#use-clear-step-by-step-instructions-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/06-tresc-jezyk.md#tre-08"
+  },
+  {
+   "id": "FOR-01",
+   "aspect": "FOR",
+   "title": "Każde pole ma widoczną, trwałą etykietę",
+   "requirement": "Etykieta jest widoczna przed wpisaniem i w jego trakcie oraz powiązana z polem w kodzie (label for/id).",
+   "how": "Kliknij etykietę: czy fokus trafia do pola?",
+   "fix": "Dodaj <label> nad polem.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:label",
+    "axe:select-name"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.3.2 Labels or Instructions (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html"
+    },
+    {
+     "label": "WCAG 2.2, 1.3.1 Info and Relationships (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html"
+    },
+    {
+     "label": "W3C COGA, 4.5.6 Use Clear Visible Labels",
+     "url": "https://www.w3.org/TR/coga-usable/#use-clear-visible-labels-pattern"
+    },
+    {
+     "label": "WebAIM, The WebAIM Million 2026",
+     "url": "https://webaim.org/projects/million/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-01"
+  },
+  {
+   "id": "FOR-02",
+   "aspect": "FOR",
+   "title": "Placeholder nie zastępuje etykiety",
+   "requirement": "Placeholder nie jest jedyną instrukcją. Format i przykłady są tekstem obok pola.",
+   "how": "Znajdź pola, w których bez placeholdera nie wiadomo, co wpisać.",
+   "fix": "Przenieś treść do etykiety lub podpowiedzi.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:placeholderonly"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Szkodliwość placeholderów",
+     "url": "https://www.nngroup.com/articles/form-design-placeholders/"
+    },
+    {
+     "label": "GOV.UK, GOV.UK Design System: pole tekstowe",
+     "url": "https://design-system.service.gov.uk/components/text-input/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-02"
+  },
+  {
+   "id": "FOR-03",
+   "aspect": "FOR",
+   "title": "Pola wymagane są oznaczone",
+   "requirement": "Każde pole wymagane ma oznaczenie (gwiazdka z legendą lub słowo), a opcjonalne słowo „opcjonalnie”.",
+   "how": "Porównaj oznaczenia z atrybutem required.",
+   "fix": "Oznacz pola w etykiecie i w kodzie.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Oznaczanie pól wymaganych",
+     "url": "https://www.nngroup.com/articles/required-fields/"
+    },
+    {
+     "label": "WCAG 2.2, 3.3.2 Labels or Instructions (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-03"
+  },
+  {
+   "id": "FOR-04",
+   "aspect": "FOR",
+   "title": "Formularz prosi tylko o dane niezbędne",
+   "requirement": "Każde pole ma uzasadnienie w zadaniu. Dane podane wcześniej nie są wymagane ponownie w tym samym procesie.",
+   "how": "Policz pola i zapisz powód każdego.",
+   "fix": "Usuń pola, użyj wartości znanych systemowi.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.3.7 Redundant Entry (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html"
+    },
+    {
+     "label": "Baymard Institute, Liczba pól w checkoucie",
+     "url": "https://baymard.com/research-articles/checkout-flow-average-form-fields"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-04"
+  },
+  {
+   "id": "FOR-05",
+   "aspect": "FOR",
+   "title": "Formularz ma jedną kolumnę i logiczną kolejność",
+   "requirement": "Pola w jednej kolumnie (wyjątek: krótkie powiązane pola), w kolejności oczekiwanej przez użytkownika.",
+   "how": "Przejdź tabulatorem i porównaj z kolejnością wizualną.",
+   "fix": "Ułóż pola w jednej kolumnie i pogrupuj w fieldset.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, 10 zaleceń dla formularzy",
+     "url": "https://www.nngroup.com/articles/web-form-design/"
+    },
+    {
+     "label": "WCAG 2.2, 1.3.2 Meaningful Sequence (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-05"
+  },
+  {
+   "id": "FOR-06",
+   "aspect": "FOR",
+   "title": "Pola wspierają autouzupełnianie i właściwą klawiaturę",
+   "requirement": "Pola z danymi osoby mają poprawny autocomplete, a typ lub inputmode otwiera odpowiednią klawiaturę na telefonie.",
+   "how": "Sprawdź atrybuty autocomplete, type i inputmode.",
+   "fix": "Dodaj np. autocomplete=\"email\", type=\"email\", inputmode=\"numeric\".",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:autocomplete-valid",
+    "x:autocomplete"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.3.5 Identify Input Purpose (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+    },
+    {
+     "label": "MDN, MDN: autocomplete",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete"
+    },
+    {
+     "label": "MDN, MDN: inputmode",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+    },
+    {
+     "label": "Google web.dev, Formularze płatności i adresu",
+     "url": "https://web.dev/articles/payment-and-address-form-best-practices"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-06"
+  },
+  {
+   "id": "FOR-07",
+   "aspect": "FOR",
+   "title": "Błąd jest opisany tekstem przy polu",
+   "requirement": "Pole z błędem jest wskazane, a problem opisany tekstem i powiązany z polem (aria-describedby, aria-invalid).",
+   "how": "Wyślij pusty formularz i sprawdź komunikaty oraz kod.",
+   "fix": "Dodaj tekst błędu nad lub pod polem i powiąż w kodzie.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.3.1 Error Identification (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html"
+    },
+    {
+     "label": "GOV.UK, GOV.UK Design System: komunikat o błędzie",
+     "url": "https://design-system.service.gov.uk/components/error-message/"
+    },
+    {
+     "label": "W3C WAI, WAI Tutorials: powiadomienia w formularzach",
+     "url": "https://www.w3.org/WAI/tutorials/forms/notifications/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-07"
+  },
+  {
+   "id": "FOR-08",
+   "aspect": "FOR",
+   "title": "Komunikat mówi, jak poprawić",
+   "requirement": "Komunikat podaje rozwiązanie („Wpisz kod w formacie 00-000”), bez „proszę”, „przepraszamy” i słowa „nieprawidłowy” bez wyjaśnienia.",
+   "how": "Wywołaj każdy rodzaj błędu i przeczytaj komunikat.",
+   "fix": "Przepisz na: co zrobić + przykład.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.3.3 Error Suggestion (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html"
+    },
+    {
+     "label": "GOV.UK, GOV.UK Design System: komunikat o błędzie",
+     "url": "https://design-system.service.gov.uk/components/error-message/"
+    },
+    {
+     "label": "Nielsen Norman Group, Wytyczne komunikatów o błędach",
+     "url": "https://www.nngroup.com/articles/error-message-guidelines/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-08"
+  },
+  {
+   "id": "FOR-09",
+   "aspect": "FOR",
+   "title": "Wpisane dane nie znikają po błędzie",
+   "requirement": "Po błędzie walidacji, cofnięciu i odświeżeniu sesji formularz zachowuje wartości.",
+   "how": "Wpisz dane, wywołaj błąd, sprawdź, czy zostały.",
+   "fix": "Zachowuj wartości, nie czyść pól przy błędzie.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "GOV.UK, GOV.UK Design System: komunikat o błędzie",
+     "url": "https://design-system.service.gov.uk/components/error-message/"
+    },
+    {
+     "label": "W3C COGA, 4.5.9 Avoid Data Loss and “Timeouts”",
+     "url": "https://www.w3.org/TR/coga-usable/#avoid-data-loss-and-timeouts-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.5.5 Make it Easy to Undo Form Errors",
+     "url": "https://www.w3.org/TR/coga-usable/#make-it-easy-to-undo-form-errors-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-09"
+  },
+  {
+   "id": "FOR-10",
+   "aspect": "FOR",
+   "title": "Długi formularz ma podsumowanie błędów z linkami",
+   "requirement": "Po nieudanym wysłaniu fokus trafia do podsumowania z linkami do pól, a tytuł strony zaczyna się od „Błąd:”.",
+   "how": "Wyślij formularz klawiaturą i sprawdź, gdzie jest fokus.",
+   "fix": "Dodaj podsumowanie i przenieś na nie fokus.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "GOV.UK, GOV.UK Design System: podsumowanie błędów",
+     "url": "https://design-system.service.gov.uk/components/error-summary/"
+    },
+    {
+     "label": "GOV.UK, GOV.UK Design System: walidacja",
+     "url": "https://design-system.service.gov.uk/patterns/validation/"
+    },
+    {
+     "label": "W3C WAI, WAI Tutorials: powiadomienia w formularzach",
+     "url": "https://www.w3.org/WAI/tutorials/forms/notifications/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-10"
+  },
+  {
+   "id": "FOR-11",
+   "aspect": "FOR",
+   "title": "Walidacja w trakcie nie wyprzedza użytkownika",
+   "requirement": "Błąd nie pojawia się przed zakończeniem wpisywania, znika po poprawieniu, a poprawne pole może być potwierdzone.",
+   "how": "Wpisuj powoli adres e-mail i obserwuj komunikaty.",
+   "fix": "Waliduj po opuszczeniu pola, czyść błąd w trakcie poprawy.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "P",
+   "auto": [
+    "x:prefillederror"
+   ],
+   "sources": [
+    {
+     "label": "Baymard Institute, Walidacja w trakcie wypełniania",
+     "url": "https://baymard.com/research-articles/inline-form-validation"
+    },
+    {
+     "label": "Nielsen Norman Group, 10 wytycznych raportowania błędów w formularzach",
+     "url": "https://www.nngroup.com/articles/errors-forms-design-guidelines/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-11"
+  },
+  {
+   "id": "FOR-12",
+   "aspect": "FOR",
+   "title": "Przycisk wysłania jest aktywny",
+   "requirement": "Główny przycisk nie jest wyłączony w oczekiwaniu na poprawne dane.",
+   "how": "Otwórz pusty formularz i sprawdź atrybut disabled.",
+   "fix": "Zostaw aktywny i pokaż błędy po kliknięciu.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:disabledsubmit"
+   ],
+   "sources": [
+    {
+     "label": "GOV.UK, GOV.UK Design System: przycisk",
+     "url": "https://design-system.service.gov.uk/components/button/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-12"
+  },
+  {
+   "id": "FOR-13",
+   "aspect": "FOR",
+   "title": "Nie ma przycisku „Wyczyść formularz”",
+   "requirement": "Formularz nie zawiera resetu obok wysłania, a „Anuluj” nie konkuruje z akcją główną.",
+   "how": "Sprawdź przyciski formularza i type=\"reset\".",
+   "fix": "Usuń reset, osłab styl „Anuluj”.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:reset"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Przyciski Reset i Anuluj",
+     "url": "https://www.nngroup.com/articles/reset-and-cancel-buttons/"
+    },
+    {
+     "label": "Nielsen Norman Group, 10 zaleceń dla formularzy",
+     "url": "https://www.nngroup.com/articles/web-form-design/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-13"
+  },
+  {
+   "id": "FOR-14",
+   "aspect": "FOR",
+   "title": "Dane ważne można sprawdzić przed wysłaniem",
+   "requirement": "Przy zobowiązaniu prawnym, płatności lub usunięciu danych akcja jest odwracalna, sprawdzana albo potwierdzana.",
+   "how": "Przejdź do ostatniego kroku i poszukaj podsumowania z edycją.",
+   "fix": "Dodaj ekran „Sprawdź dane” z linkami „Zmień”.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.3.4 Error Prevention (Legal, Financial, Data) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html"
+    },
+    {
+     "label": "GOV.UK, GOV.UK Design System: sprawdź odpowiedzi",
+     "url": "https://design-system.service.gov.uk/patterns/check-answers/"
+    },
+    {
+     "label": "W3C COGA, 4.5.4 Design Forms to Prevent Mistakes",
+     "url": "https://www.w3.org/TR/coga-usable/#design-forms-to-prevent-mistakes-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-14"
+  },
+  {
+   "id": "FOR-15",
+   "aspect": "FOR",
+   "title": "Nieodwracalna akcja ma konkretne potwierdzenie",
+   "requirement": "Okno nazywa skutek i obiekt, a przyciski opisują akcję („Usuń adres” / „Zachowaj”).",
+   "how": "Wywołaj usunięcie i przeczytaj okno.",
+   "fix": "Zmień treść i etykiety, gdzie można daj „Cofnij”.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Okna potwierdzenia",
+     "url": "https://www.nngroup.com/articles/confirmation-dialog/"
+    },
+    {
+     "label": "Nielsen Norman Group, Zapobieganie błędom świadomym",
+     "url": "https://www.nngroup.com/articles/user-mistakes/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/07-formularze-bledy.md#for-15"
+  },
+  {
+   "id": "KLA-01",
+   "aspect": "KLA",
+   "title": "Wszystko działa z klawiatury",
+   "requirement": "Każda funkcja dostępna myszą jest dostępna z klawiatury, bez wymogu tempa.",
+   "how": "Przejdź całą ścieżkę bez myszy.",
+   "fix": "Użyj natywnych <button> i <a href>.",
+   "strength": "NORMA A",
+   "severity": 4,
+   "method": "P",
+   "auto": [
+    "x:keyboard",
+    "axe:scrollable-region-focusable"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.1.1 Keyboard (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html"
+    },
+    {
+     "label": "W3C, Using ARIA",
+     "url": "https://www.w3.org/TR/using-aria/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-01"
+  },
+  {
+   "id": "KLA-02",
+   "aspect": "KLA",
+   "title": "Nie ma pułapki na klawiaturę",
+   "requirement": "Z każdego elementu można wyjść klawiaturą.",
+   "how": "Tabuluj przez okna, mapy, odtwarzacze.",
+   "fix": "Obsłuż Esc i poprawny powrót fokusu.",
+   "strength": "NORMA A",
+   "severity": 4,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.1.2 No Keyboard Trap (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-02"
+  },
+  {
+   "id": "KLA-03",
+   "aspect": "KLA",
+   "title": "Fokus jest widoczny",
+   "requirement": "Element z fokusem ma wyraźny wskaźnik. Nie usunięto outline bez zamiennika. Zalecane: kontrast 3:1 i grubość 2 px (AAA).",
+   "how": "Tabuluj i rób zrzuty.",
+   "fix": "Dodaj :focus-visible { outline: 3px solid; outline-offset: 2px }.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "x:focusvisible"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.4.7 Focus Visible (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html"
+    },
+    {
+     "label": "W3C, WCAG Technique F78: usunięty wskaźnik fokusu",
+     "url": "https://www.w3.org/WAI/WCAG22/Techniques/failures/F78"
+    },
+    {
+     "label": "WCAG 2.2, 2.4.13 Focus Appearance (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-03"
+  },
+  {
+   "id": "KLA-04",
+   "aspect": "KLA",
+   "title": "Fokus nie chowa się pod przyklejonymi elementami",
+   "requirement": "Element z fokusem nie jest w całości zasłonięty nagłówkiem, stopką ani banerem cookies.",
+   "how": "Tabuluj w dół i w górę, obserwuj nagłówek i baner.",
+   "fix": "Dodaj scroll-padding i zmniejsz elementy przyklejone.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [
+    "x:focusobscured"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.4.11 Focus Not Obscured (Minimum) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html"
+    },
+    {
+     "label": "Nielsen Norman Group, Przyklejone nagłówki",
+     "url": "https://www.nngroup.com/articles/sticky-headers/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-04"
+  },
+  {
+   "id": "KLA-05",
+   "aspect": "KLA",
+   "title": "Kolejność fokusu jest logiczna",
+   "requirement": "Kolejność odpowiada układowi i znaczeniu. Brak dodatnich wartości tabindex.",
+   "how": "Zapisz kolejność i porównaj z wizualną.",
+   "fix": "Uporządkuj kod, usuń tabindex > 0.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:tabindex"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.4.3 Focus Order (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html"
+    },
+    {
+     "label": "WCAG 2.2, 1.3.2 Meaningful Sequence (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-05"
+  },
+  {
+   "id": "KLA-06",
+   "aspect": "KLA",
+   "title": "Jest link „Przejdź do treści”",
+   "requirement": "Pierwszy element fokusu pozwala pominąć powtarzające się bloki, jest widoczny po fokusie i działa.",
+   "how": "Naciśnij Tab po wczytaniu strony, potem Enter.",
+   "fix": "Dodaj skip link do <main id>.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:bypass",
+    "x:skiplink"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.4.1 Bypass Blocks (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html"
+    },
+    {
+     "label": "GOV.UK, GOV.UK Design System: skip link",
+     "url": "https://design-system.service.gov.uk/components/skip-link/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-06"
+  },
+  {
+   "id": "KLA-07",
+   "aspect": "KLA",
+   "title": "Okno modalne zarządza fokusem",
+   "requirement": "Po otwarciu fokus jest w oknie, Tab nie wychodzi poza nie, Esc zamyka, a fokus wraca do przycisku otwierającego.",
+   "how": "Otwórz i zamknij każde okno klawiaturą.",
+   "fix": "Użyj <dialog> z showModal() lub wzorca APG.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "P",
+   "auto": [
+    "axe:aria-dialog-name"
+   ],
+   "sources": [
+    {
+     "label": "W3C WAI, APG: okno modalne",
+     "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+    },
+    {
+     "label": "WCAG 2.2, 2.4.3 Focus Order (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-07"
+  },
+  {
+   "id": "KLA-08",
+   "aspect": "KLA",
+   "title": "Fokus i wpisywanie nie zmieniają kontekstu same",
+   "requirement": "Fokus lub zmiana wartości nie otwiera strony, nie wysyła formularza i nie przenosi użytkownika bez zapowiedzi.",
+   "how": "Zmieniaj listy wyboru klawiaturą.",
+   "fix": "Dodaj przycisk zatwierdzający.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.2.1 On Focus (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/on-focus.html"
+    },
+    {
+     "label": "WCAG 2.2, 3.2.2 On Input (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/on-input.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-08"
+  },
+  {
+   "id": "KLA-09",
+   "aspect": "KLA",
+   "title": "Skróty jednoliterowe można wyłączyć",
+   "requirement": "Skrót z samej litery, cyfry lub znaku można wyłączyć, zmienić lub działa tylko przy fokusie na elemencie.",
+   "how": "Naciskaj pojedyncze litery poza polami tekstowymi.",
+   "fix": "Usuń skróty albo dodaj ustawienie.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.1.4 Character Key Shortcuts (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/character-key-shortcuts.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/08-klawiatura-fokus.md#kla-09"
+  },
+  {
+   "id": "SEM-01",
+   "aspect": "SEM",
+   "title": "Każdy obraz ma właściwy tekst alternatywny",
+   "requirement": "Obraz informacyjny ma alt opisujący treść, dekoracyjny pusty alt, a obraz-link opis celu.",
+   "how": "Przejdź drzewo decyzyjne WAI dla każdego obrazu.",
+   "fix": "Uzupełnij alt lub ustaw alt=\"\".",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:image-alt",
+    "axe:input-image-alt",
+    "axe:svg-img-alt",
+    "axe:role-img-alt"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.1.1 Non-text Content (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html"
+    },
+    {
+     "label": "W3C WAI, WAI: drzewo decyzyjne tekstu alternatywnego",
+     "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/"
+    },
+    {
+     "label": "W3C WAI, WAI Tutorials: obrazy dekoracyjne",
+     "url": "https://www.w3.org/WAI/tutorials/images/decorative/"
+    },
+    {
+     "label": "WebAIM, The WebAIM Million 2026",
+     "url": "https://webaim.org/projects/million/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-01"
+  },
+  {
+   "id": "SEM-02",
+   "aspect": "SEM",
+   "title": "Nagłówki tworzą logiczną strukturę",
+   "requirement": "Jeden główny nagłówek h1 opisujący stronę, poziomy bez przeskoków, nagłówki oznaczone h1–h6, a nie samym stylem.",
+   "how": "Wypisz nagłówki (HeadingsMap).",
+   "fix": "Popraw poziomy, zmień style w CSS.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:heading-order",
+    "axe:page-has-heading-one",
+    "axe:empty-heading",
+    "x:h1"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.3.1 Info and Relationships (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html"
+    },
+    {
+     "label": "W3C WAI, WAI Tutorials: nagłówki",
+     "url": "https://www.w3.org/WAI/tutorials/page-structure/headings/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-02"
+  },
+  {
+   "id": "SEM-03",
+   "aspect": "SEM",
+   "title": "Strona ma regiony",
+   "requirement": "Treść jest w header, nav, main, footer. Jeden main, wiele nav ma różne nazwy.",
+   "how": "Sprawdź listę regionów w czytniku.",
+   "fix": "Zamień div na elementy semantyczne.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:landmark-one-main",
+    "axe:region",
+    "axe:landmark-unique",
+    "axe:landmark-no-duplicate-main"
+   ],
+   "sources": [
+    {
+     "label": "W3C WAI, APG: regiony strony (landmarks)",
+     "url": "https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/"
+    },
+    {
+     "label": "W3C WAI, WAI Tutorials: regiony strony",
+     "url": "https://www.w3.org/WAI/tutorials/page-structure/regions/"
+    },
+    {
+     "label": "WCAG 2.2, 1.3.1 Info and Relationships (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-03"
+  },
+  {
+   "id": "SEM-04",
+   "aspect": "SEM",
+   "title": "Link to <a href>, przycisk to <button>",
+   "requirement": "Nawigacja używa <a href>, akcja <button>. Brak klikalnych div i span.",
+   "how": "Szukaj onclick na div/span i a bez href.",
+   "fix": "Zamień element na natywny.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:nested-interactive",
+    "x:fakebuttons"
+   ],
+   "sources": [
+    {
+     "label": "W3C, Using ARIA",
+     "url": "https://www.w3.org/TR/using-aria/"
+    },
+    {
+     "label": "WCAG 2.2, 4.1.2 Name, Role, Value (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-04"
+  },
+  {
+   "id": "SEM-05",
+   "aspect": "SEM",
+   "title": "Każda kontrolka ma nazwę",
+   "requirement": "Przyciski i linki, także same ikony, mają dostępną nazwę opisującą akcję.",
+   "how": "Sprawdź drzewo dostępności dla ikon.",
+   "fix": "Dodaj tekst lub aria-label.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:button-name",
+    "axe:link-name",
+    "axe:aria-command-name",
+    "axe:aria-input-field-name"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 4.1.2 Name, Role, Value (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+    },
+    {
+     "label": "WCAG 2.2, 2.4.4 Link Purpose (In Context) (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html"
+    },
+    {
+     "label": "WebAIM, The WebAIM Million 2026",
+     "url": "https://webaim.org/projects/million/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-05"
+  },
+  {
+   "id": "SEM-06",
+   "aspect": "SEM",
+   "title": "Nazwa dostępna zawiera widoczny tekst",
+   "requirement": "Jeśli przycisk ma tekst, aria-label zawiera ten sam tekst.",
+   "how": "Porównaj tekst z aria-label.",
+   "fix": "Usuń aria-label albo zacznij go od widocznego tekstu.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:label-content-name-mismatch"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.5.3 Label in Name (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-06"
+  },
+  {
+   "id": "SEM-07",
+   "aspect": "SEM",
+   "title": "ARIA jest poprawna",
+   "requirement": "Role, stany i właściwości są dozwolone dla elementu, a wartości prawidłowe. Brak aria-label na elementach bez roli.",
+   "how": "Uruchom axe, sprawdź stany w drzewie dostępności.",
+   "fix": "Usuń zbędną ARIA.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:aria-allowed-attr",
+    "axe:aria-allowed-role",
+    "axe:aria-prohibited-attr",
+    "axe:aria-required-attr",
+    "axe:aria-required-children",
+    "axe:aria-required-parent",
+    "axe:aria-roles",
+    "axe:aria-valid-attr",
+    "axe:aria-valid-attr-value",
+    "axe:aria-hidden-focus"
+   ],
+   "sources": [
+    {
+     "label": "W3C, Using ARIA",
+     "url": "https://www.w3.org/TR/using-aria/"
+    },
+    {
+     "label": "WCAG 2.2, 4.1.2 Name, Role, Value (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-07"
+  },
+  {
+   "id": "SEM-08",
+   "aspect": "SEM",
+   "title": "Rozwijane elementy ogłaszają stan",
+   "requirement": "Menu, akordeon i filtr mają aria-expanded zgodne ze stanem.",
+   "how": "Otwórz element i sprawdź zmianę aria-expanded.",
+   "fix": "Użyj <details> lub wzorca disclosure.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C WAI, APG: rozwijanie treści (disclosure)",
+     "url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/"
+    },
+    {
+     "label": "WCAG 2.2, 4.1.2 Name, Role, Value (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-08"
+  },
+  {
+   "id": "SEM-09",
+   "aspect": "SEM",
+   "title": "Komunikaty dynamiczne są ogłaszane",
+   "requirement": "Potwierdzenia, liczba wyników i błędy mają role=\"status\" lub role=\"alert\".",
+   "how": "Dodaj produkt, wyszukaj, wyślij formularz z czytnikiem.",
+   "fix": "Dodaj region aria-live.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 4.1.3 Status Messages (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"
+    },
+    {
+     "label": "W3C, WCAG Technique ARIA19: role=alert",
+     "url": "https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA19"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-09"
+  },
+  {
+   "id": "SEM-10",
+   "aspect": "SEM",
+   "title": "Tabele danych mają nagłówki",
+   "requirement": "Dane tabelaryczne są w <table> z <th scope> i podpisem. Tabela nie służy do układu.",
+   "how": "Sprawdź kod tabel.",
+   "fix": "Dodaj th, scope i caption.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:td-headers-attr",
+    "axe:th-has-data-cells",
+    "axe:scope-attr-valid"
+   ],
+   "sources": [
+    {
+     "label": "W3C WAI, WAI Tutorials: tabele",
+     "url": "https://www.w3.org/WAI/tutorials/tables/"
+    },
+    {
+     "label": "WCAG 2.2, 1.3.1 Info and Relationships (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-10"
+  },
+  {
+   "id": "SEM-11",
+   "aspect": "SEM",
+   "title": "Listy i grupy są oznaczone",
+   "requirement": "Listy w ul/ol/dl, grupy pól radio i checkbox w fieldset z legend.",
+   "how": "Sprawdź kod menu, list produktów i grup opcji.",
+   "fix": "Użyj elementów listy i fieldset.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "axe:list",
+    "axe:listitem",
+    "axe:definition-list",
+    "axe:dlitem"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.3.1 Info and Relationships (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html"
+    },
+    {
+     "label": "W3C WAI, WAI Tutorials: formularze",
+     "url": "https://www.w3.org/WAI/tutorials/forms/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-11"
+  },
+  {
+   "id": "SEM-12",
+   "aspect": "SEM",
+   "title": "Instrukcje nie opierają się na kształcie, położeniu ani dźwięku",
+   "requirement": "Instrukcja nie mówi wyłącznie „kliknij zielony przycisk po prawej”, podaje też nazwę elementu.",
+   "how": "Przeczytaj instrukcje i wyszukaj: obok, po prawej, okrągły, zielony.",
+   "fix": "Dodaj nazwę elementu.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.3.3 Sensory Characteristics (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/09-semantyka-czytniki.md#sem-12"
+  },
+  {
+   "id": "MED-01",
+   "aspect": "MED",
+   "title": "Wideo ma napisy",
+   "requirement": "Nagrane wideo z dźwiękiem ma napisy zsynchronizowane, obejmujące dialogi i istotne dźwięki.",
+   "how": "Włącz napisy, sprawdź zgodność.",
+   "fix": "Dodaj <track kind=\"captions\">.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:video-caption",
+    "x:video"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.2.2 Captions (Prerecorded) (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html"
+    },
+    {
+     "label": "W3C WAI, WAI: dostępne audio i wideo",
+     "url": "https://www.w3.org/WAI/media/av/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-01"
+  },
+  {
+   "id": "MED-02",
+   "aspect": "MED",
+   "title": "Nagrania mają alternatywę tekstową",
+   "requirement": "Audio ma transkrypcję, wideo audiodeskrypcję.",
+   "how": "Poszukaj transkrypcji i opisu.",
+   "fix": "Dodaj transkrypcję pod odtwarzaczem.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.2.1 Audio-only and Video-only (Prerecorded) (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html"
+    },
+    {
+     "label": "WCAG 2.2, 1.2.3 Audio Description or Media Alternative (Prerecorded) (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded.html"
+    },
+    {
+     "label": "WCAG 2.2, 1.2.5 Audio Description (Prerecorded) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded.html"
+    },
+    {
+     "label": "W3C WAI, WAI: dostępne audio i wideo",
+     "url": "https://www.w3.org/WAI/media/av/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-02"
+  },
+  {
+   "id": "MED-03",
+   "aspect": "MED",
+   "title": "Nic nie gra samo",
+   "requirement": "Dźwięk dłuższy niż 3 s nie włącza się automatycznie, a jeśli się włącza, można go zatrzymać lub wyciszyć.",
+   "how": "Otwórz stronę z dźwiękiem, sprawdź autoplay.",
+   "fix": "Usuń autoplay.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:no-autoplay-audio",
+    "x:autoplay"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.2 Audio Control (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-03"
+  },
+  {
+   "id": "MED-04",
+   "aspect": "MED",
+   "title": "Ruch można zatrzymać",
+   "requirement": "Treść ruszająca się automatycznie dłużej niż 5 s obok innej treści ma pauzę, stop lub ukrycie.",
+   "how": "Znajdź karuzele, paski, wideo w tle.",
+   "fix": "Dodaj przycisk pauzy albo usuń ruch.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "M",
+   "auto": [
+    "x:animation"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.2.2 Pause, Stop, Hide (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html"
+    },
+    {
+     "label": "W3C COGA, 4.9.1 Let Users Control When the Content Moves or Changes",
+     "url": "https://www.w3.org/TR/coga-usable/#let-users-control-when-the-content-moves-or-changes-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-04"
+  },
+  {
+   "id": "MED-05",
+   "aspect": "MED",
+   "title": "Karuzela nie przewija się sama",
+   "requirement": "Karuzela zmienia się po akcji użytkownika. Jeśli się obraca, ma pauzę i zatrzymuje się po fokusie.",
+   "how": "Obserwuj karuzelę 15 s, użyj klawiatury.",
+   "fix": "Wyłącz autoprzewijanie, najlepiej pokaż treści obok siebie.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Karuzele przewijane automatycznie",
+     "url": "https://www.nngroup.com/articles/auto-forwarding/"
+    },
+    {
+     "label": "W3C WAI, APG: karuzela",
+     "url": "https://www.w3.org/WAI/ARIA/apg/patterns/carousel/"
+    },
+    {
+     "label": "WCAG 2.2, 2.2.2 Pause, Stop, Hide (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-05"
+  },
+  {
+   "id": "MED-06",
+   "aspect": "MED",
+   "title": "Strona szanuje prefers-reduced-motion",
+   "requirement": "Przy ustawieniu ograniczenia ruchu animacje nieistotne są wyłączone lub zastąpione.",
+   "how": "Emuluj prefers-reduced-motion i obejrzyj stronę.",
+   "fix": "Dodaj blok @media (prefers-reduced-motion: reduce).",
+   "strength": "NORMA AAA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:reducedmotion"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.3.3 Animation from Interactions (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html"
+    },
+    {
+     "label": "MDN, MDN: prefers-reduced-motion",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-06"
+  },
+  {
+   "id": "MED-07",
+   "aspect": "MED",
+   "title": "Nic nie miga częściej niż 3 razy na sekundę",
+   "requirement": "Brak treści migających więcej niż 3 razy w ciągu sekundy (lub poniżej progu błysku).",
+   "how": "Obejrzyj animacje, zwolnij nagranie.",
+   "fix": "Usuń miganie.",
+   "strength": "NORMA A",
+   "severity": 4,
+   "method": "M",
+   "auto": [
+    "axe:blink",
+    "axe:marquee"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.3.1 Three Flashes or Below Threshold (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-07"
+  },
+  {
+   "id": "MED-08",
+   "aspect": "MED",
+   "title": "Animacje interfejsu trwają 100–500 ms",
+   "requirement": "Przejścia trwają ok. 100–500 ms i pokazują związek przyczyny ze skutkiem.",
+   "how": "Odczytaj transition-duration.",
+   "fix": "Skróć do 200–300 ms.",
+   "strength": "BADANIE",
+   "severity": 1,
+   "method": "A",
+   "auto": [
+    "x:transition"
+   ],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Czas trwania animacji",
+     "url": "https://www.nngroup.com/articles/animation-duration/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-08"
+  },
+  {
+   "id": "MED-09",
+   "aspect": "MED",
+   "title": "Transmisja na żywo ma napisy",
+   "requirement": "Transmisje z dźwiękiem mają napisy na żywo.",
+   "how": "Włącz napisy w odtwarzaczu transmisji. Brak transmisji: nie dotyczy.",
+   "fix": "Zamów napisy na żywo lub użyj zweryfikowanego automatu.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.2.4 Captions (Live) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/captions-live.html"
+    },
+    {
+     "label": "W3C WAI, WAI: dostępne audio i wideo",
+     "url": "https://www.w3.org/WAI/media/av/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/10-multimedia-ruch.md#med-09"
+  },
+  {
+   "id": "KOG-01",
+   "aspect": "KOG",
+   "title": "Nic nie przerywa zadania",
+   "requirement": "Brak samoczynnych okien, powiadomień i czatów w trakcie zadania. Przerwania można wyłączyć.",
+   "how": "Przejdź ścieżkę i policz przerwania niewywołane przez personę.",
+   "fix": "Usuń lub odłóż do zakończenia zadania.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C COGA, 4.6.1 Limit Interruptions",
+     "url": "https://www.w3.org/TR/coga-usable/#limit-interruptions-pattern"
+    },
+    {
+     "label": "Nielsen Norman Group, Pop-upy",
+     "url": "https://www.nngroup.com/articles/popups/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-01"
+  },
+  {
+   "id": "KOG-02",
+   "aspect": "KOG",
+   "title": "Wiadomo, ile kroków zostało",
+   "requirement": "Proces pokazuje kroki, bieżący etap i co będzie potrzebne przed startem.",
+   "how": "Na początku procesu zapytaj: ile potrwa, co przygotować?",
+   "fix": "Dodaj listę kroków i informację o potrzebnych danych.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C COGA, 4.2.4 Make Each Step Clear",
+     "url": "https://www.w3.org/TR/coga-usable/#make-each-step-clear-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.6.4 Provide Information So a User Can Complete and Prepare for a Task",
+     "url": "https://www.w3.org/TR/coga-usable/#provide-information-so-a-user-can-complete-and-prepare-for-a-task-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-02"
+  },
+  {
+   "id": "KOG-03",
+   "aspect": "KOG",
+   "title": "Ekran zadania ma jeden cel",
+   "requirement": "W procesie jeden ekran odpowiada za jedną decyzję lub jeden temat.",
+   "how": "Policz decyzje na ekranie.",
+   "fix": "Podziel na kroki.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "GOV.UK, GOV.UK Service Manual: struktura formularza",
+     "url": "https://www.gov.uk/service-manual/design/form-structure"
+    },
+    {
+     "label": "W3C COGA, 4.6.3 Avoid Too Much Content",
+     "url": "https://www.w3.org/TR/coga-usable/#avoid-too-much-content-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-03"
+  },
+  {
+   "id": "KOG-04",
+   "aspect": "KOG",
+   "title": "Logowanie nie wymaga testu pamięci",
+   "requirement": "Nie trzeba przepisywać, pamiętać ani rozwiązywać zagadki. Wklejanie i menedżer haseł działają.",
+   "how": "Wklej hasło, użyj menedżera, sprawdź CAPTCHA.",
+   "fix": "Pozwól wklejać, dodaj link logowania.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "P",
+   "auto": [
+    "x:paste"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 3.3.8 Accessible Authentication (Minimum) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html"
+    },
+    {
+     "label": "W3C COGA, 4.7.1 Provide a Login that Does Not Rely on Memory or Other Cognitive Skills",
+     "url": "https://www.w3.org/TR/coga-usable/#provide-a-login-that-does-not-rely-on-memory-or-other-cognitive-skills-pattern"
+    },
+    {
+     "label": "NIST, NIST SP 800-63B-4: hasła",
+     "url": "https://pages.nist.gov/800-63-4/sp800-63b.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-04"
+  },
+  {
+   "id": "KOG-05",
+   "aspect": "KOG",
+   "title": "Limit czasu można wyłączyć lub wydłużyć",
+   "requirement": "Limit można wyłączyć, zmienić lub przedłużyć co najmniej 10 razy, z ostrzeżeniem minimum 20 s.",
+   "how": "Zostaw formularz na dłużej.",
+   "fix": "Dodaj przedłużenie i zapis postępu.",
+   "strength": "NORMA A",
+   "severity": 3,
+   "method": "M",
+   "auto": [
+    "axe:meta-refresh"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.2.1 Timing Adjustable (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html"
+    },
+    {
+     "label": "W3C COGA, 4.5.9 Avoid Data Loss and “Timeouts”",
+     "url": "https://www.w3.org/TR/coga-usable/#avoid-data-loss-and-timeouts-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-05"
+  },
+  {
+   "id": "KOG-06",
+   "aspect": "KOG",
+   "title": "Ikony mają podpis",
+   "requirement": "Ikony niosące znaczenie mają widoczną etykietę (wyjątek: powszechnie znane, np. lupa przy polu).",
+   "how": "Zasłoń podpisy i zapytaj, co znaczą ikony.",
+   "fix": "Dodaj tekst obok ikony.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Użyteczność ikon",
+     "url": "https://www.nngroup.com/articles/icon-usability/"
+    },
+    {
+     "label": "W3C COGA, 4.2.7 Use Icons that Help the User",
+     "url": "https://www.w3.org/TR/coga-usable/#use-icons-that-help-the-user-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-06"
+  },
+  {
+   "id": "KOG-07",
+   "aspect": "KOG",
+   "title": "Użytkownik nie musi liczyć ani przeliczać",
+   "requirement": "Sumy, terminy i jednostki są podane wprost (np. cena całkowita, data dostawy).",
+   "how": "Zaznacz miejsca, w których persona musi coś policzyć.",
+   "fix": "Policz w systemie i pokaż wynik.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C COGA, 4.7.5 Do Not Rely on Users Calculations or Memorizing Information",
+     "url": "https://www.w3.org/TR/coga-usable/#do-not-rely-on-users-calculations-or-memorizing-information-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.5.12 Use Familiar Metrics and Units",
+     "url": "https://www.w3.org/TR/coga-usable/#use-familiar-metrics-and-units-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-07"
+  },
+  {
+   "id": "KOG-08",
+   "aspect": "KOG",
+   "title": "Instrukcja i pomoc są przy zadaniu",
+   "requirement": "Trudne pole lub decyzja ma krótką pomoc obok, a nie w osobnym dokumencie.",
+   "how": "Wskaż trudne pola. Czy mają podpowiedź?",
+   "fix": "Dodaj podpowiedź lub rozwijaną pomoc.",
+   "strength": "WYTYCZNA",
+   "severity": 1,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C COGA, 4.8.4 Provide Help for Forms and Non-standard Controls",
+     "url": "https://www.w3.org/TR/coga-usable/#provide-help-for-forms-and-non-standard-controls-pattern"
+    },
+    {
+     "label": "Nielsen Norman Group, Heurystyka 10: pomoc i dokumentacja",
+     "url": "https://www.nngroup.com/articles/help-and-documentation/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-08"
+  },
+  {
+   "id": "KOG-09",
+   "aspect": "KOG",
+   "title": "Dłuższy tekst ma skrót",
+   "requirement": "Dokument dłuższy niż kilka ekranów ma podsumowanie i spis treści.",
+   "how": "Sprawdź regulamin, artykuły, instrukcje.",
+   "fix": "Dodaj „W skrócie” i spis treści.",
+   "strength": "WYTYCZNA",
+   "severity": 1,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "W3C COGA, 4.4.8 Provide Summary of Long Documents and Media",
+     "url": "https://www.w3.org/TR/coga-usable/#provide-summary-of-long-documents-and-media-pattern"
+    },
+    {
+     "label": "W3C COGA, 4.3.3 Use a Clear and Understandable Page Structure",
+     "url": "https://www.w3.org/TR/coga-usable/#use-a-clear-and-understandable-page-structure-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/11-poznawcza-neuroroznorodnosc.md#kog-09"
+  },
+  {
+   "id": "MOB-01",
+   "aspect": "MOB",
+   "title": "Cel dotykowy ma co najmniej 24×24 px",
+   "requirement": "Każdy cel ≥ 24×24 px CSS albo wystarczający odstęp od sąsiadów. Wyjątki: link w zdaniu, kontrolka natywna.",
+   "how": "Zmierz rozmiary na widoku mobilnym.",
+   "fix": "Zwiększ padding lub odstęp.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:target-size"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.5.8 Target Size (Minimum) (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-01"
+  },
+  {
+   "id": "MOB-02",
+   "aspect": "MOB",
+   "title": "Główne cele dotykowe mają 44–48 px",
+   "requirement": "Przyciski i pozycje menu ≥ 44×44 pt (Apple) / 48×48 dp (Material) / 1×1 cm (NN/g).",
+   "how": "Zmierz główne przyciski.",
+   "fix": "Ustaw min-height: 48px.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:target44"
+   ],
+   "sources": [
+    {
+     "label": "Apple, Human Interface Guidelines: Accessibility",
+     "url": "https://developer.apple.com/design/human-interface-guidelines/accessibility"
+    },
+    {
+     "label": "Google, Material Design 3: dostępność, struktura",
+     "url": "https://m3.material.io/foundations/designing/structure"
+    },
+    {
+     "label": "Nielsen Norman Group, Cele dotykowe",
+     "url": "https://www.nngroup.com/articles/touch-target-size/"
+    },
+    {
+     "label": "Google web.dev, Dostępne cele dotykowe",
+     "url": "https://web.dev/articles/accessible-tap-targets"
+    },
+    {
+     "label": "WCAG 2.2, 2.5.5 Target Size (Enhanced) (AAA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html"
+    },
+    {
+     "label": "Laws of UX, Prawo Fittsa",
+     "url": "https://lawsofux.com/fittss-law/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-02"
+  },
+  {
+   "id": "MOB-03",
+   "aspect": "MOB",
+   "title": "Można powiększać",
+   "requirement": "Meta viewport nie blokuje skalowania (brak user-scalable=no i maximum-scale mniejszego niż 2).",
+   "how": "Powiększ gestem na telefonie.",
+   "fix": "Usuń ograniczenia z viewport.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "axe:meta-viewport",
+    "axe:meta-viewport-large"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.4 Resize Text (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html"
+    },
+    {
+     "label": "MDN, MDN: meta viewport",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-03"
+  },
+  {
+   "id": "MOB-04",
+   "aspect": "MOB",
+   "title": "Wersja mobilna ma tę samą treść",
+   "requirement": "Wszystkie treści i funkcje desktopu są dostępne na telefonie.",
+   "how": "Porównaj listę sekcji i funkcji.",
+   "fix": "Przywróć brakujące elementy.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Google, Google Search: mobile-first indexing",
+     "url": "https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing"
+    },
+    {
+     "label": "Nielsen Norman Group, Nawigacja mobilna",
+     "url": "https://www.nngroup.com/articles/mobile-navigation-patterns/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-04"
+  },
+  {
+   "id": "MOB-05",
+   "aspect": "MOB",
+   "title": "Strona działa w obu orientacjach",
+   "requirement": "Orientacja nie jest wymuszona.",
+   "how": "Obróć urządzenie na każdym ekranie.",
+   "fix": "Usuń blokadę orientacji.",
+   "strength": "NORMA AA",
+   "severity": 2,
+   "method": "M",
+   "auto": [
+    "axe:css-orientation-lock"
+   ],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.3.4 Orientation (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/orientation.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-05"
+  },
+  {
+   "id": "MOB-06",
+   "aspect": "MOB",
+   "title": "Gest ma alternatywę",
+   "requirement": "Przeciąganie, przesuwanie i gesty wielopalcowe można zastąpić pojedynczym dotknięciem.",
+   "how": "Sprawdź suwaki, galerie, mapy.",
+   "fix": "Dodaj przyciski strzałek i plus/minus.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.5.1 Pointer Gestures (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/pointer-gestures.html"
+    },
+    {
+     "label": "WCAG 2.2, 2.5.7 Dragging Movements (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-06"
+  },
+  {
+   "id": "MOB-07",
+   "aspect": "MOB",
+   "title": "Nic istotnego nie zależy od najechania",
+   "requirement": "Treść pokazana po najechaniu jest dostępna także z fokusu i dotyku, można ją zamknąć i na nią najechać.",
+   "how": "Sprawdź dymki i rozwijane menu na telefonie.",
+   "fix": "Użyj kliknięcia zamiast hover.",
+   "strength": "NORMA AA",
+   "severity": 3,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 1.4.13 Content on Hover or Focus (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-07"
+  },
+  {
+   "id": "MOB-08",
+   "aspect": "MOB",
+   "title": "Przypadkowe dotknięcie można wycofać",
+   "requirement": "Akcja uruchamia się po puszczeniu, a nie po naciśnięciu. Przesunięcie palca poza element anuluje akcję.",
+   "how": "Naciśnij przycisk, przesuń poza i puść.",
+   "fix": "Użyj zdarzenia click zamiast mousedown lub touchstart.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.5.2 Pointer Cancellation (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/pointer-cancellation.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-08"
+  },
+  {
+   "id": "MOB-09",
+   "aspect": "MOB",
+   "title": "Ruch urządzeniem nie jest jedynym sposobem",
+   "requirement": "Funkcję uruchamianą potrząśnięciem lub przechyleniem można wykonać przyciskiem i wyłączyć.",
+   "how": "Sprawdź funkcje używające czujników ruchu.",
+   "fix": "Dodaj przycisk i wyłącznik.",
+   "strength": "NORMA A",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "WCAG 2.2, 2.5.4 Motion Actuation (A)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/motion-actuation.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/12-mobile-dotyk.md#mob-09"
+  },
+  {
+   "id": "WYD-01",
+   "aspect": "WYD",
+   "title": "LCP wynosi najwyżej 2,5 s",
+   "requirement": "Największy element pierwszego ekranu pojawia się do 2,5 s w 75. percentylu wizyt.",
+   "how": "PageSpeed Insights lub pomiar w audycie.",
+   "fix": "Nadaj obrazowi LCP fetchpriority=\"high\", bez lazy, i zmniejsz plik.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "x:lcp"
+   ],
+   "sources": [
+    {
+     "label": "Google web.dev, Web Vitals: progi",
+     "url": "https://web.dev/articles/vitals"
+    },
+    {
+     "label": "Google web.dev, Optymalizacja LCP",
+     "url": "https://web.dev/articles/optimize-lcp"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/13-wydajnosc.md#wyd-01"
+  },
+  {
+   "id": "WYD-02",
+   "aspect": "WYD",
+   "title": "INP wynosi najwyżej 200 ms",
+   "requirement": "Opóźnienie reakcji na interakcję do 200 ms w 75. percentylu. Laboratoryjnie sprawdza się długie zadania JS.",
+   "how": "PageSpeed Insights (dane terenowe), panel Performance.",
+   "fix": "Podziel długie zadania, usuń zbędny JS.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "M",
+   "auto": [
+    "x:longtasks"
+   ],
+   "sources": [
+    {
+     "label": "Google web.dev, Web Vitals: progi",
+     "url": "https://web.dev/articles/vitals"
+    },
+    {
+     "label": "Google web.dev, Optymalizacja INP",
+     "url": "https://web.dev/articles/optimize-inp"
+    },
+    {
+     "label": "Laws of UX, Próg Doherty’ego",
+     "url": "https://lawsofux.com/doherty-threshold/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/13-wydajnosc.md#wyd-02"
+  },
+  {
+   "id": "WYD-03",
+   "aspect": "WYD",
+   "title": "CLS wynosi najwyżej 0,1",
+   "requirement": "Suma przesunięć układu do 0,1.",
+   "how": "Pomiar w audycie, obserwacja ładowania.",
+   "fix": "Ustaw wymiary obrazów i rezerwuj miejsce.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "A",
+   "auto": [
+    "x:cls"
+   ],
+   "sources": [
+    {
+     "label": "Google web.dev, Web Vitals: progi",
+     "url": "https://web.dev/articles/vitals"
+    },
+    {
+     "label": "Google web.dev, Optymalizacja CLS",
+     "url": "https://web.dev/articles/optimize-cls"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/13-wydajnosc.md#wyd-03"
+  },
+  {
+   "id": "WYD-04",
+   "aspect": "WYD",
+   "title": "TTFB wynosi najwyżej 0,8 s",
+   "requirement": "Pierwszy bajt odpowiedzi do 0,8 s.",
+   "how": "Pomiar w audycie lub WebPageTest.",
+   "fix": "Cache, CDN, mniej przekierowań.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:ttfb"
+   ],
+   "sources": [
+    {
+     "label": "Google web.dev, Time to First Byte",
+     "url": "https://web.dev/articles/ttfb"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/13-wydajnosc.md#wyd-04"
+  },
+  {
+   "id": "WYD-05",
+   "aspect": "WYD",
+   "title": "Obrazy mają wymiary i właściwy rozmiar",
+   "requirement": "Obrazy mają width i height lub aspect-ratio, wersje przez srcset, a te poza pierwszym ekranem loading=\"lazy\".",
+   "how": "Sprawdź kod i rozmiar plików.",
+   "fix": "Dodaj wymiary, srcset i format WebP lub AVIF.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:imgdims"
+   ],
+   "sources": [
+    {
+     "label": "Google web.dev, Optymalizacja CLS",
+     "url": "https://web.dev/articles/optimize-cls"
+    },
+    {
+     "label": "Google web.dev, Obrazy responsywne",
+     "url": "https://web.dev/articles/serve-responsive-images"
+    },
+    {
+     "label": "Google web.dev, Leniwe ładowanie obrazów",
+     "url": "https://web.dev/articles/browser-level-image-lazy-loading"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/13-wydajnosc.md#wyd-05"
+  },
+  {
+   "id": "WYD-06",
+   "aspect": "WYD",
+   "title": "Tekst jest widoczny podczas ładowania fontów",
+   "requirement": "Fonty webowe mają font-display: swap lub optional.",
+   "how": "Sprawdź @font-face.",
+   "fix": "Dodaj font-display i preload.",
+   "strength": "WYTYCZNA",
+   "severity": 1,
+   "method": "A",
+   "auto": [
+    "x:fontdisplay"
+   ],
+   "sources": [
+    {
+     "label": "Google web.dev, Dobre praktyki dla fontów",
+     "url": "https://web.dev/articles/font-best-practices"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/13-wydajnosc.md#wyd-06"
+  },
+  {
+   "id": "WYD-07",
+   "aspect": "WYD",
+   "title": "Oczekiwanie powyżej 1 s ma wskaźnik",
+   "requirement": "Powyżej 1 s pokazany jest wskaźnik, 2–10 s szkielet lub spinner, powyżej 10 s postęp z szacunkiem.",
+   "how": "Spowolnij sieć (Slow 4G) i przejdź ścieżkę.",
+   "fix": "Dodaj stany ładowania.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Wskaźniki postępu",
+     "url": "https://www.nngroup.com/articles/progress-indicators/"
+    },
+    {
+     "label": "Nielsen Norman Group, Ekrany szkieletowe",
+     "url": "https://www.nngroup.com/articles/skeleton-screens/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/13-wydajnosc.md#wyd-07"
+  },
+  {
+   "id": "WYD-08",
+   "aspect": "WYD",
+   "title": "Strona nie zgłasza błędów w konsoli",
+   "requirement": "Brak błędów JavaScript i nieudanych żądań na ścieżce.",
+   "how": "Otwórz konsolę na każdym ekranie.",
+   "fix": "Napraw wyjątki i brakujące zasoby.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "A",
+   "auto": [
+    "x:console"
+   ],
+   "sources": [
+    {
+     "label": "Google Chrome, Lighthouse: punktacja wydajności",
+     "url": "https://developer.chrome.com/docs/lighthouse/performance/performance-scoring"
+    },
+    {
+     "label": "Nielsen Norman Group, 4 czynniki wiarygodności",
+     "url": "https://www.nngroup.com/articles/trustworthy-design/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/13-wydajnosc.md#wyd-08"
+  },
+  {
+   "id": "ETY-01",
+   "aspect": "ETY",
+   "title": "Odrzucenie cookies jest tak samo łatwe jak zgoda",
+   "requirement": "Dostęp do danych w urządzeniu poza niezbędnymi wymaga uprzedniej zgody. „Odrzuć” jest na tym samym poziomie i tak samo widoczne.",
+   "how": "Otwórz stronę w trybie prywatnym, porównaj przyciski i ciasteczka przed zgodą.",
+   "fix": "Dodaj równorzędne „Odrzuć”, ładuj skrypty po zgodzie.",
+   "strength": "PRAWO",
+   "severity": 3,
+   "method": "M",
+   "auto": [
+    "x:cookies"
+   ],
+   "sources": [
+    {
+     "label": "Sejm RP, Ustawa z 12.07.2024 Prawo komunikacji elektronicznej, art. 399–400 (Dz.U. 2024 poz. 1221)",
+     "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/1221/text.html"
+    },
+    {
+     "label": "EROD (EDPB), Wytyczne 03/2022 o zwodniczych wzorcach projektowych",
+     "url": "https://www.edpb.europa.eu/documents/guideline/guidelines-032022-on-deceptive-design-patterns-in-social-media-platform_en"
+    },
+    {
+     "label": "Nielsen Norman Group, Zgody na cookies",
+     "url": "https://www.nngroup.com/articles/cookie-permissions/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-01"
+  },
+  {
+   "id": "ETY-02",
+   "aspect": "ETY",
+   "title": "Zgodę można wycofać równie łatwo, jak wyrazić",
+   "requirement": "Na stronie jest stałe miejsce do zmiany zgód.",
+   "how": "Znajdź zmianę zgód po zamknięciu banera.",
+   "fix": "Dodaj link „Ustawienia cookies” w stopce.",
+   "strength": "PRAWO",
+   "severity": 3,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "UE, RODO, rozporządzenie (UE) 2016/679, art. 7 ust. 3",
+     "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-02"
+  },
+  {
+   "id": "ETY-03",
+   "aspect": "ETY",
+   "title": "Nic płatnego ani zgody nie są zaznaczone z góry",
+   "requirement": "Checkboxy zgód, dodatków i newslettera są domyślnie puste.",
+   "how": "Sprawdź domyślne stany na ścieżce.",
+   "fix": "Odznacz domyślnie.",
+   "strength": "PRAWO",
+   "severity": 4,
+   "method": "A",
+   "auto": [
+    "x:preselected"
+   ],
+   "sources": [
+    {
+     "label": "UE, Dyrektywa 2011/83/UE o prawach konsumentów, art. 8 ust. 2 i art. 22",
+     "url": "https://eur-lex.europa.eu/eli/dir/2011/83/oj/eng"
+    },
+    {
+     "label": "UE, RODO, rozporządzenie (UE) 2016/679, art. 7 ust. 3",
+     "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng"
+    },
+    {
+     "label": "Deceptive Patterns, Zaznaczenie z góry",
+     "url": "https://deceptive.design/types/preselection/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-03"
+  },
+  {
+   "id": "ETY-04",
+   "aspect": "ETY",
+   "title": "Nie ma fałszywej presji",
+   "requirement": "Liczniki, „zostało 2 sztuki” i „ogląda 15 osób” są prawdziwe.",
+   "how": "Odśwież stronę: czy licznik startuje od nowa?",
+   "fix": "Usuń lub podłącz do prawdziwych danych.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Deceptive Patterns, Fałszywa presja czasu",
+     "url": "https://deceptive.design/types/fake-urgency/"
+    },
+    {
+     "label": "UE, Akt o usługach cyfrowych (UE) 2022/2065, art. 25",
+     "url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-04"
+  },
+  {
+   "id": "ETY-05",
+   "aspect": "ETY",
+   "title": "Odmowa jest neutralna",
+   "requirement": "Przycisk odmowy nie zawstydza („Nie, wolę przepłacać”) i jest czytelny.",
+   "how": "Przeczytaj przyciski odmowy w oknach.",
+   "fix": "Zmień na „Nie, dziękuję”.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Deceptive Patterns, Typy zwodniczych wzorców",
+     "url": "https://deceptive.design/types/"
+    },
+    {
+     "label": "EROD (EDPB), Wytyczne 03/2022 o zwodniczych wzorcach projektowych",
+     "url": "https://www.edpb.europa.eu/documents/guideline/guidelines-032022-on-deceptive-design-patterns-in-social-media-platform_en"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-05"
+  },
+  {
+   "id": "ETY-06",
+   "aspect": "ETY",
+   "title": "Rezygnacja jest równie łatwa jak zapis",
+   "requirement": "Wypisanie, usunięcie konta i anulowanie są możliwe online, podobną liczbą kroków.",
+   "how": "Porównaj liczbę kroków zapisu i rezygnacji.",
+   "fix": "Dodaj samoobsługową rezygnację.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Deceptive Patterns, Trudna rezygnacja",
+     "url": "https://deceptive.design/types/hard-to-cancel/"
+    },
+    {
+     "label": "UE, Akt o usługach cyfrowych (UE) 2022/2065, art. 25",
+     "url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj/eng"
+    },
+    {
+     "label": "EROD (EDPB), Wytyczne 03/2022 o zwodniczych wzorcach projektowych",
+     "url": "https://www.edpb.europa.eu/documents/guideline/guidelines-032022-on-deceptive-design-patterns-in-social-media-platform_en"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-06"
+  },
+  {
+   "id": "ETY-07",
+   "aspect": "ETY",
+   "title": "Treść nie jest zasłonięta oknem po wejściu",
+   "requirement": "Brak pełnoekranowych okien zaraz po wejściu (wyjątek: wymogi prawne, np. wiek).",
+   "how": "Wejdź pierwszy raz na telefonie.",
+   "fix": "Zamień na wąski pasek albo pokaż później.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Google, Google Search: okna pełnoekranowe i dialogi",
+     "url": "https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials"
+    },
+    {
+     "label": "Nielsen Norman Group, Pop-upy",
+     "url": "https://www.nngroup.com/articles/popups/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-07"
+  },
+  {
+   "id": "ETY-08",
+   "aspect": "ETY",
+   "title": "Nie trzeba konta, aby zobaczyć wartość",
+   "requirement": "Treść i oferta są dostępne bez logowania.",
+   "how": "Przejdź ścieżkę bez konta.",
+   "fix": "Przenieś logowanie do momentu, gdy jest niezbędne.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Login walls",
+     "url": "https://www.nngroup.com/articles/login-walls/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-08"
+  },
+  {
+   "id": "ETY-09",
+   "aspect": "ETY",
+   "title": "Wiadomo, kto stoi za stroną",
+   "requirement": "Dane firmy, kontakt, regulamin, polityka prywatności i warunki zwrotu są dostępne z każdej strony i aktualne.",
+   "how": "Znajdź je w 2 kliknięciach.",
+   "fix": "Uzupełnij stopkę i treści.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, 4 czynniki wiarygodności",
+     "url": "https://www.nngroup.com/articles/trustworthy-design/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-09"
+  },
+  {
+   "id": "ETY-10",
+   "aspect": "ETY",
+   "title": "Strona działa wyłącznie po HTTPS",
+   "requirement": "Wszystkie zasoby przez HTTPS, brak treści mieszanej.",
+   "how": "Sprawdź adres, certyfikat i konsolę.",
+   "fix": "Włącz HTTPS i przekierowanie.",
+   "strength": "WYTYCZNA",
+   "severity": 4,
+   "method": "A",
+   "auto": [
+    "x:https"
+   ],
+   "sources": [
+    {
+     "label": "Google web.dev, Dlaczego HTTPS",
+     "url": "https://web.dev/articles/why-https-matters"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-10"
+  },
+  {
+   "id": "ETY-11",
+   "aspect": "ETY",
+   "title": "Usługa objęta ustawą ma informację o dostępności",
+   "requirement": "Usługa handlu elektronicznego objęta ustawą z 26.04.2024 spełnia wymagania dostępności, w tym informuje o sposobie ich spełnienia.",
+   "how": "Ustal, czy ustawa obejmuje podmiot, i poszukaj informacji o dostępności.",
+   "fix": "Opublikuj informację o dostępności i kontakt.",
+   "strength": "PRAWO",
+   "severity": 3,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Sejm RP, Ustawa z 26.04.2024 o zapewnianiu spełniania wymagań dostępności niektórych produktów i usług (Dz.U. 2024 poz. 731)",
+     "url": "https://api.sejm.gov.pl/eli/acts/DU/2024/731/text.html"
+    },
+    {
+     "label": "UE, Dyrektywa (UE) 2019/882, European Accessibility Act",
+     "url": "https://eur-lex.europa.eu/eli/dir/2019/882/oj/eng"
+    },
+    {
+     "label": "ETSI/CEN/CENELEC, EN 301 549 V3.2.1 (2021-03), wymagania dostępności ICT",
+     "url": "https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/14-etyka-prywatnosc-zaufanie.md#ety-11"
+  },
+  {
+   "id": "TRA-01",
+   "aspect": "TRA",
+   "title": "Wyszukiwarka jest widoczna i prosta",
+   "requirement": "W serwisie z wieloma treściami pole jest widoczne w nagłówku, bez dodatkowych opcji na starcie.",
+   "how": "Znajdź pole na każdym ekranie.",
+   "fix": "Dodaj otwarte pole z przyciskiem „Szukaj”.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Wyszukiwarka: widoczna i prosta",
+     "url": "https://www.nngroup.com/articles/search-visible-and-simple/"
+    },
+    {
+     "label": "W3C COGA, 4.3.6 Provide Search",
+     "url": "https://www.w3.org/TR/coga-usable/#provide-search-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-01"
+  },
+  {
+   "id": "TRA-02",
+   "aspect": "TRA",
+   "title": "Wyszukiwarka rozumie literówki i synonimy",
+   "requirement": "Zapytania z błędem, synonimem, odmianą i symbolem produktu zwracają trafne wyniki.",
+   "how": "Wpisz 5 zapytań, w tym z literówką i bez polskich znaków.",
+   "fix": "Dodaj słownik synonimów i tolerancję błędów.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Baymard Institute, Wyszukiwanie w e-commerce",
+     "url": "https://baymard.com/research-articles/ecommerce-search-query-types"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-02"
+  },
+  {
+   "id": "TRA-03",
+   "aspect": "TRA",
+   "title": "Brak wyników wskazuje dalszą drogę",
+   "requirement": "Ekran mówi jasno, że nic nie znaleziono, pokazuje zapytanie i punkty startu.",
+   "how": "Wyszukaj „qwertyzxc”.",
+   "fix": "Dodaj wyjaśnienie, podpowiedzi i kategorie.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Brak wyników wyszukiwania",
+     "url": "https://www.nngroup.com/articles/search-no-results-serp/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-03"
+  },
+  {
+   "id": "TRA-04",
+   "aspect": "TRA",
+   "title": "Puste stany tłumaczą, co zrobić",
+   "requirement": "Pusty koszyk, lista lub historia ma wyjaśnienie i akcję.",
+   "how": "Otwórz pusty koszyk i ulubione.",
+   "fix": "Dodaj tekst i przycisk.",
+   "strength": "BADANIE",
+   "severity": 1,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Puste stany",
+     "url": "https://www.nngroup.com/articles/empty-state-interface-design/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-04"
+  },
+  {
+   "id": "TRA-05",
+   "aspect": "TRA",
+   "title": "Filtry są widoczne i można je cofnąć",
+   "requirement": "Aktywne filtry są pokazane nad wynikami, można je usunąć pojedynczo i wszystkie. Liczba wyników się aktualizuje.",
+   "how": "Ustaw 3 filtry, usuń jeden.",
+   "fix": "Dodaj znaczniki filtrów i „Wyczyść”.",
+   "strength": "BADANIE",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Filtry i fasety",
+     "url": "https://www.nngroup.com/articles/filters-vs-facets/"
+    },
+    {
+     "label": "Nielsen Norman Group, Heurystyka 3: kontrola i wolność użytkownika",
+     "url": "https://www.nngroup.com/articles/user-control-and-freedom/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-05"
+  },
+  {
+   "id": "TRA-06",
+   "aspect": "TRA",
+   "title": "Strona produktu odpowiada na pytania kupującego",
+   "requirement": "Są: nazwa, cena, zdjęcia, opis, dostępność, warianty, dostawa, zwrot i wyraźny przycisk zakupu.",
+   "how": "Sprawdź listę dla jednego produktu.",
+   "fix": "Uzupełnij brakujące informacje.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "M",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Strona produktu",
+     "url": "https://www.nngroup.com/articles/ecommerce-product-pages/"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-06"
+  },
+  {
+   "id": "TRA-07",
+   "aspect": "TRA",
+   "title": "Dodanie do koszyka jest potwierdzone",
+   "requirement": "Po dodaniu widać potwierdzenie i zmianę liczby w koszyku, ogłoszone czytnikowi.",
+   "how": "Dodaj produkt i obserwuj.",
+   "fix": "Dodaj komunikat role=\"status\" i licznik.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Nielsen Norman Group, Koszyk e-commerce",
+     "url": "https://www.nngroup.com/articles/shopping-cart/"
+    },
+    {
+     "label": "WCAG 2.2, 4.1.3 Status Messages (AA)",
+     "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-07"
+  },
+  {
+   "id": "TRA-08",
+   "aspect": "TRA",
+   "title": "Koszt całkowity jest znany przed checkoutem",
+   "requirement": "Dostawa i opłaty pokazane najpóźniej w koszyku.",
+   "how": "Porównaj cenę produktu, koszyka i podsumowania.",
+   "fix": "Pokaż koszt dostawy na stronie produktu i w koszyku.",
+   "strength": "BADANIE",
+   "severity": 4,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Baymard Institute, Porzucanie koszyków, statystyki 2026",
+     "url": "https://baymard.com/blog/cart-abandonment-rate"
+    },
+    {
+     "label": "Deceptive Patterns, Ukryte koszty",
+     "url": "https://deceptive.design/types/hidden-costs/"
+    },
+    {
+     "label": "W3C COGA, 4.5.3 Notify Users of Fees and Charges at the Start of a Task",
+     "url": "https://www.w3.org/TR/coga-usable/#notify-users-of-fees-and-charges-at-the-start-of-a-task-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-08"
+  },
+  {
+   "id": "TRA-09",
+   "aspect": "TRA",
+   "title": "Można kupić bez konta",
+   "requirement": "Zakup jako gość jest dostępny i najbardziej widoczny.",
+   "how": "Przejdź do checkoutu bez konta.",
+   "fix": "Dodaj zakup jako gość na pierwszym miejscu.",
+   "strength": "BADANIE",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "Baymard Institute, Zakup bez konta",
+     "url": "https://baymard.com/research-articles/make-guest-checkout-prominent"
+    },
+    {
+     "label": "Baymard Institute, Porzucanie koszyków, statystyki 2026",
+     "url": "https://baymard.com/blog/cart-abandonment-rate"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-09"
+  },
+  {
+   "id": "TRA-10",
+   "aspect": "TRA",
+   "title": "Przycisk zamówienia mówi o obowiązku zapłaty",
+   "requirement": "Ostatni przycisk ma napis „zamówienie z obowiązkiem zapłaty” lub równoznaczny.",
+   "how": "Sprawdź etykietę ostatniego przycisku.",
+   "fix": "Zmień na „Zamawiam z obowiązkiem zapłaty”.",
+   "strength": "PRAWO",
+   "severity": 4,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "UE, Dyrektywa 2011/83/UE o prawach konsumentów, art. 8 ust. 2 i art. 22",
+     "url": "https://eur-lex.europa.eu/eli/dir/2011/83/oj/eng"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-10"
+  },
+  {
+   "id": "TRA-11",
+   "aspect": "TRA",
+   "title": "Potwierdzenie mówi, co dalej",
+   "requirement": "Ekran po zakończeniu podaje numer, co się stanie dalej i kontakt. Wysyłane jest też e-mailem.",
+   "how": "Zakończ proces w środowisku testowym.",
+   "fix": "Zbuduj ekran wg wzoru GOV.UK.",
+   "strength": "WYTYCZNA",
+   "severity": 3,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "GOV.UK, GOV.UK Design System: strona potwierdzenia",
+     "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/"
+    },
+    {
+     "label": "W3C COGA, 4.5.10 Provide Feedback",
+     "url": "https://www.w3.org/TR/coga-usable/#provide-feedback-pattern"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-11"
+  },
+  {
+   "id": "TRA-12",
+   "aspect": "TRA",
+   "title": "Hasło: długość zamiast reguł",
+   "requirement": "Wymagana długość podana z góry, bez reguł składu znaków, z wklejaniem i przyciskiem „Pokaż hasło”. NIST: min. 15 znaków, gdy hasło jest jedynym zabezpieczeniem.",
+   "how": "Utwórz konto z długim hasłem bez cyfr.",
+   "fix": "Usuń reguły składu, dodaj podgląd.",
+   "strength": "WYTYCZNA",
+   "severity": 2,
+   "method": "P",
+   "auto": [],
+   "sources": [
+    {
+     "label": "NIST, NIST SP 800-63B-4: hasła",
+     "url": "https://pages.nist.gov/800-63-4/sp800-63b.html"
+    },
+    {
+     "label": "Nielsen Norman Group, Tworzenie hasła",
+     "url": "https://www.nngroup.com/articles/password-creation/"
+    },
+    {
+     "label": "Google web.dev, Formularze logowania",
+     "url": "https://web.dev/articles/sign-in-form-best-practices"
+    }
+   ],
+   "url": "https://github.com/Not1nei/QA-Testing-Knowledge-Base/blob/main/ux/wytyczne/15-transakcje-wyszukiwanie.md#tra-12"
+  }
+ ]
+}

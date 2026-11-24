@@ -61,3 +61,7 @@ Przydatne narzędzia do analizy UI i UX:
 ## 5. Podsumowanie
 
 UI i UX są ważnymi elementami jakości strony internetowej. Dobry interfejs powinien być czytelny, spójny i łatwy w obsłudze.
+
+## Dokładne wytyczne
+
+Wytyczne ze źródłami: [baza UX](../ux/README.md), [checklista UX](../ux/checklista/checklista-ux.md).
